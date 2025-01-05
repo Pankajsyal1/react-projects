@@ -1,4 +1,4 @@
-import FormValidationApp from "../../components/form-validations/FormValidationApp"
+import FormValidationApp from "../../components/projects/beginner-projects/form-validations/FormValidationApp"
 
 const FormValidation = () => {
   return (

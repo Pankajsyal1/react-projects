@@ -1,4 +1,4 @@
-import AppHeading from "../AppHeading"
+import AppHeading from "../../../common/AppHeading"
 
 const FormValidationApp = () => {
   return (

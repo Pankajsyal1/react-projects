@@ -1,4 +1,4 @@
-import Section from '../sections/Section'
+import Section from '../ui/sections/Section'
 import ProjectLinks from './ProjectsLinks'
 
 const ProjectList = () => {

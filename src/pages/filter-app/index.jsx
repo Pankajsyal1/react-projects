@@ -1,5 +1,4 @@
-import AdvancedFilterApp from "../../components/filters/AdvancedFilterApp"
-
+import AdvancedFilterApp from "../../components/projects/beginner-projects/filters/AdvancedFilterApp"
 const AdvancedFilter = () => {
   return (
     <AdvancedFilterApp />

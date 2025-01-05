@@ -1,4 +1,4 @@
-import TestimonialsApp from '../../components/testimonials/TestimonialsApp'
+import TestimonialsApp from '../../components/projects/beginner-projects/testimonials/TestimonialsApp'
 
 const Testimonials = () => {
   return (

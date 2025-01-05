@@ -1,5 +1,5 @@
-import { accordionData } from "../../data/content"
-import AppHeading from "../AppHeading"
+import { accordionData } from "../../../../data/content"
+import AppHeading from "../../../common/AppHeading"
 import AccordionItem from "./AccordionItem"
 const AccordionApp = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Counter.module.css";
-import AppHeading from "../AppHeading";
+import AppHeading from "../../../common/AppHeading";
 
 const CounterApp = () => {
   const [count, setCount] = useState(0);

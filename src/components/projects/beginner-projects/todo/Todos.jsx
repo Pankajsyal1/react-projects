@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Todos.module.css';
-import { initialTodos } from '../../data/todos';
-import AppHeading from '../AppHeading';
+import { initialTodos } from '../../../../data/todos';
+import AppHeading from '../../../common/AppHeading';
 
 const TodosApp = () => {
   const [todos, setTodos] = useState(initialTodos);

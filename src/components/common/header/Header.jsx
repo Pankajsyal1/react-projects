@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import FollowMe from '../FollowMe';
-import { Logo } from '../Logo/Logo';
+import FollowMe from '../../../components/about/FollowMe';
+import { Logo } from '../../common/Logo/Logo';
 
 function Header() {
   return (

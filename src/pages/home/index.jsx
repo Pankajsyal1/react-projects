@@ -1,8 +1,8 @@
 import Profile from "../../components/about/Profile";
+import Section from "../../components/ui/sections/Section";
+import TechStacks from "../../components/about/TechStacks";
+import SocialLinks from "../../components/about/SocialLinks";
 import ProjectList from "../../components/projects/ProjectList";
-import Section from "../../components/sections/Section";
-import SocialLinks from "../../components/SocialLinks";
-import TechStacks from "../../components/TechStacks";
 
 const Home = () => {
   return (

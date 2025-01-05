@@ -1,6 +1,6 @@
 import { useState } from "react"
-import SearchIcon from "../icons/SearchIcon";
-import AppHeading from "../AppHeading";
+import SearchIcon from "../../../icons/SearchIcon";
+import AppHeading from "../../../common/AppHeading";
 
 const INITIAL_STATE = {
   bgColor: '#000',

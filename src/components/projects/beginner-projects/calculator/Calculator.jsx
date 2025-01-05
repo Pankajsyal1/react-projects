@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Calculator.module.css";
-import AppHeading from "../AppHeading";
+import AppHeading from "../../../common/AppHeading";
 
 const CalculatorApp = () => {
   const [inputValue, setInputValue] = useState('')

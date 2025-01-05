@@ -1,5 +1,5 @@
-import Github from "./icons/Github"
-import Linkedin from "./icons/Linkedin"
+import Github from "../icons/Github"
+import Linkedin from "../icons/Linkedin"
 
 const FollowMe = () => {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { testimonials } from '../../data/testimonials';
-import AppHeading from '../AppHeading';
+import { testimonials } from '../../../../data/testimonials';
+import AppHeading from '../../../common/AppHeading';
 
 const TestimonialsApp = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

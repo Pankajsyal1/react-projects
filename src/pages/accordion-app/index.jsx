@@ -1,5 +1,5 @@
 
-import AccordionApp from '../../components/accordion/Accordion'
+import AccordionApp from '../../components/projects/beginner-projects/accordion/Accordion'
 
 const Accordion = () => {
   return (

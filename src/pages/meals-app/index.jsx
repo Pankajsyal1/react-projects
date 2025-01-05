@@ -1,4 +1,4 @@
-import MealsApp from "../../components/meals/Meals"
+import MealsApp from "../../components/projects/beginner-projects/meals/Meals"
 
 const Meals = () => {
   return (

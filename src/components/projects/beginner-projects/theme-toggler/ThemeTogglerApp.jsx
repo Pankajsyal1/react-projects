@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from "./style.module.css"
-import AppHeading from '../AppHeading';
+import AppHeading from '../../../common/AppHeading';
 
 const ThemeTogglerApp = () => {
   const [backgroundColor, setBackgroundColor] = useState("white");

@@ -1,4 +1,4 @@
-import TodosApp from "../../components/todo/Todos"
+import TodosApp from "../../components/projects/beginner-projects/todo/Todos"
 
 const Todos = () => {
   return (
