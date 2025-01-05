@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './Todos.module.css';
 import { initialTodos } from '../../data/todos';
+import AppHeading from '../AppHeading';
 
 const TodosApp = () => {
   const [todos, setTodos] = useState(initialTodos);
@@ -51,9 +52,7 @@ const TodosApp = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={'title'}>
-        Project-2: <em>Todos App</em>
-      </h1>
+      <AppHeading sno={1} title={"Todos App"} />
       <form onSubmit={handleForm} className={styles.form}>
         <h2 className={styles.subtitle}>{editingId ? "Edit" : "Add"} Todo</h2>
         <input

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Calculator.module.css";
+import AppHeading from "../AppHeading";
 
 const CalculatorApp = () => {
   const [inputValue, setInputValue] = useState('')
@@ -20,10 +21,9 @@ const CalculatorApp = () => {
 
   return (
     <>
-      <h1 className={'title'}>Project-4: <em>Calculator App</em></h1>
+      <AppHeading sno={4} title={"Calculator App"} />
       <div className={styles.calculator}>
         <div className={styles.display}>{inputValue}</div>
-
         <div className={styles.buttonRow}>
           <button className={`${styles.button} ${styles.buttonClear}`} onClick={handleClear}>
             C

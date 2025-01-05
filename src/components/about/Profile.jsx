@@ -22,7 +22,7 @@ const Profile = () => {
   return (
     <>
       <div className='mb-3'>
-        <h1 className="text-5xl flex gap-2 items-center">
+        <h1 className="text-5xl flex flex-wrap gap-2 items-center">
           Hi
           <img
             src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif"
@@ -43,7 +43,7 @@ const Profile = () => {
           <i>- 4+ years of experience</i>
         </div>
       </div>
-      <div className='grid grid-cols-2 gap-4'>
+      <div className='grid md:grid-cols-2 gap-4'>
         <InfoCard title="Skills & Expertise" points={developerInfo} />
         <InfoCard title="Additional Info" points={additionalInfo} />
       </div>

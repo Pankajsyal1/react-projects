@@ -9,7 +9,7 @@ function Header() {
         <div className="text-white text-2xl font-bold">
           <Link to="/"><Logo /></Link>
         </div>
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="flex space-x-6 items-center">
           <Link className="text-sm font-medium hover:text-gray-500 transition duration-200" to="/projects">Projects</Link>
           <FollowMe />
         </nav>

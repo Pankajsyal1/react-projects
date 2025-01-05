@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import CardGrid from './CardGrid';
+import AppHeading from '../AppHeading';
 
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
 
@@ -27,7 +28,7 @@ const MealsApp = () => {
 
   return (
     <>
-      <h1 className={'title'}>Project-3: <em>Meals App</em></h1>
+      <AppHeading sno={3} title={"Meals App"} />
       <CardGrid items={items} loading={loading} />
     </>
   )

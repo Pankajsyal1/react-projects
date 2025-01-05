@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from "./style.module.css"
+import AppHeading from '../AppHeading';
 
 const ThemeTogglerApp = () => {
   const [backgroundColor, setBackgroundColor] = useState("white");
@@ -14,7 +15,7 @@ const ThemeTogglerApp = () => {
 
   return (
     <section className={styles['section']} style={{ backgroundColor, color: textColor }}>
-      <h1 className={'title'}>Project-5: <em>Theme Toggler App</em></h1>
+      <AppHeading sno={5} title={"Color Toggler App"} />
       <button
         onClick={handleClick}
         style={{

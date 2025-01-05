@@ -1,5 +1,6 @@
 import { useState } from "react"
 import SearchIcon from "../icons/SearchIcon";
+import AppHeading from "../AppHeading";
 
 const INITIAL_STATE = {
   bgColor: '#000',
@@ -26,8 +27,7 @@ const HiddenSearchBarApp = () => {
 
   return (
     <div className="p-4" style={{ backgroundColor: color.bgColor, color: color.textColor }}>
-      <h1 className={'title'}>Project-6: <em>Hidden Search Bar App</em></h1>
-
+      <AppHeading sno={6} title={"Search Icon Toggler App"} />
       {!showInput && <div className="flex gap-1 items-center">
         <span onClick={handleClick}><SearchIcon /></span>
         <p className="mt-1">Click on search icon to search...</p>

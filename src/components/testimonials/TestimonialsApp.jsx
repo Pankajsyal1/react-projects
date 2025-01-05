@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { testimonials } from '../../data/testimonials';
+import AppHeading from '../AppHeading';
 
 const TestimonialsApp = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +30,7 @@ const TestimonialsApp = () => {
   // console.log((currentIndex + testimonials.length - 1) % testimonials.length)
   return (
     <div>
-      <h1 className={'title'}>Project-7: <em>Testimonial App</em></h1>
+      <AppHeading sno={7} title={"Testimonial App"} />
       <div className='w-[450px] mx-auto text-center bg-white text-black p-8 rounded-md'>
         <p>{testimonials[currentIndex].quote}</p>
         <h6>{testimonials[currentIndex].author}</h6>

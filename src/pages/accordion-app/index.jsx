@@ -1,8 +1,9 @@
 
 import AccordionApp from '../../components/accordion/Accordion'
 
-export const Accordion = () => {
+const Accordion = () => {
   return (
     <AccordionApp />
   )
 }
+export default Accordion

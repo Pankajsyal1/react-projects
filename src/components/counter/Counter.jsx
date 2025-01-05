@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Counter.module.css";
+import AppHeading from "../AppHeading";
 
 const CounterApp = () => {
   const [count, setCount] = useState(0);
@@ -10,7 +11,7 @@ const CounterApp = () => {
   }
   return (
     <>
-      <h1 className={'title'}>Project-1: <em>Counter App</em></h1>
+      <AppHeading sno={1} title={"Counter App"} />
       <h2 className={styles.number}>Counter: {count}</h2>
       <input style={styles.input} type="number" placeholder="Please enter amount" value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} />
       <div className={styles['btns-container']}>

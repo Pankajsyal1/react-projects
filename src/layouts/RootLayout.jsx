@@ -7,7 +7,7 @@ const RootLayout = () => {
     <>
       <Header />
       <main>
-        <section>
+        <section className="py-8">
           <div className="container">
             <Outlet />
           </div>
