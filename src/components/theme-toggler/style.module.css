@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+
+body .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section button {
+  padding: 8px 18px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.section .content h1 {
+  font-size: 5rem;
+  font-family: 'Bungee Outline', cursive;
+  line-height: 80px;
+}

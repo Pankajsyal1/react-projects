@@ -1,0 +1,66 @@
+.number {
+  font-size: 4rem;
+  margin-top: 8px;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+
+input {
+  margin-top: 24px;
+  padding: 10px 20px;
+  border: 2px solid #141517;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  /* Slightly smaller font size than the button */
+  color: #141517;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #00d563;
+  /* Add a focus color */
+  box-shadow: 0 0 5px rgba(0, 213, 99, 0.5);
+}
+
+input::placeholder {
+  color: #b3b3b3;
+  /* Placeholder text color */
+  font-style: italic;
+  /* Optional for a distinct look */
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 2rem;
+  background: #141517;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  outline-color: #141517;
+  /* box-shadow: -4px 4px 0 #ffffff3d; */
+  transition: all .5s cubic-bezier(.215, .61, .355, 1);
+  border: 6px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  border-color: #ffffff3d;
+}
+
+/* button:hover {
+  box-shadow: -6px 6px 0 #ffffff3d;
+} */
+
+button:disabled {
+  background: #6b6b6b;
+  color: #fff;
+  cursor: not-allowed;
+}
