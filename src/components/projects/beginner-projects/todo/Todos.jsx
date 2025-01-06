@@ -52,7 +52,7 @@ const TodosApp = () => {
 
   return (
     <div className={styles.container}>
-      <AppHeading sno={1} title={"Todos App"} />
+      <AppHeading sno={2} title={"Todos App"} />
       <form onSubmit={handleForm} className={styles.form}>
         <h2 className={styles.subtitle}>{editingId ? "Edit" : "Add"} Todo</h2>
         <input

@@ -1,6 +1,5 @@
 import { lazy } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import AdvancedFilter from "./pages/filter-app"
 import NotFound from "./404"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
@@ -31,7 +30,7 @@ const routes = createBrowserRouter([
       { path: "/testimonials", element: <Testimonials /> },
       { path: "/accordion", element: <Accordion /> },
       { path: "/form-validation", element: <FormValidation /> },
-      { path: "/advanced-filter", element: <AdvancedFilter /> },
+      // { path: "/advanced-filter", element: <AdvancedFilter /> },
       { path: "*", element: <NotFound /> },
     ]
   }

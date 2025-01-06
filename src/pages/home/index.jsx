@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       {/* About Section */}
-      <Section title={"Tech Stack"}>
+      <Section title={""}>
         <Profile />
       </Section>
 

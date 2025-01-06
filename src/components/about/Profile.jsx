@@ -39,8 +39,12 @@ const Profile = () => {
           />
         </h1>
         <div className='mt-3 flex flex-col gap-2'>
-          <i>- Currently working as Frontend Developer and UI/UX Designer</i>
+          <i>- Currently working as Frontend Developer</i>
           <i>- 4+ years of experience</i>
+          <i>- Frontend Developer</i>
+          <i>- UI Developer</i>
+          <i>- Creative UIUX Designer</i>
+          <i>- Blogger</i>
         </div>
       </div>
       <div className='grid md:grid-cols-2 gap-4'>

@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 h1,
 h2,
@@ -29,8 +29,23 @@ body {
   font-family: 'Poppins', serif;
 }
 
+html,
+body,
+#root {
+  @apply h-full;
+}
+
+#root {
+  @apply flex flex-col;
+}
+
+main {
+  @apply flex-1;
+}
+
+
 .title {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 12px;
 }
 

@@ -5,5 +5,5 @@ const AppHeading = ({ sno, title }) => {
     <h1 className={'title'}>Project-{sno}: <em>{title}</em></h1>
   )
 }
-AppHeading.propTypes = { sno: PropTypes.string, title: PropTypes.string }
+AppHeading.propTypes = { sno: PropTypes.number, title: PropTypes.string }
 export default AppHeading
