@@ -19,7 +19,7 @@ const getTime = (timeString) => {
 
 // weather key
 const weatherapi = "4bd596c3770c4589a3983928252903";
-const WEATHER_API_BASE_URL = 'http://api.weatherapi.com/v1';
+const WEATHER_API_BASE_URL = 'https://api.weatherapi.com/v1';
 const CREATE_API_URL = (endPoint, query) => `${WEATHER_API_BASE_URL}/${endPoint}?key=${weatherapi}&q=${query}`;
 
 
