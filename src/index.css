@@ -51,9 +51,9 @@ main {
 
 /* Custom Horizontal Scrollbar */
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 10px;
   /* Horizontal scrollbar width */
-  height: 3px;
+  height: 10px;
   /* Vertical scrollbar height */
 }
 

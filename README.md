@@ -1,8 +1,13 @@
 # React + Vite
+export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+export const geoApiOptions = {
+  method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '2c43699cf7msh4045ee7552732a6p1c77c2jsne3730660dab7',
+		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+	}
+};
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+export const WEATHER_API_KEY = "f121e869b51c0a085923575ae8578dce";
+export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
