@@ -4,7 +4,7 @@ import { Logo } from '../../common/Logo/Logo';
 
 function Header() {
   return (
-    <header className="bg-gray-800 p-4">
+    <header className="bg-gray-800 p-4 sticky top-0 z-10">
       <div className="container flex justify-between items-center">
         <div className="text-white text-2xl font-bold">
           <Link to="/"><Logo /></Link>

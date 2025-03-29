@@ -4,11 +4,13 @@ import styles from "./Meals.module.css";
 const Card = ({ meal }) => {
   return (
     <div className={styles.card}>
-      <img
-        src={meal.strMealThumb}
-        alt={meal.strMeal}
-        className={styles.cardImage}
-      />
+      <div className="h-48">
+        <img
+          src={meal.strMealThumb}
+          alt={meal.strMeal}
+          className={styles.cardImage}
+        />
+      </div>
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{meal.strMeal}</h3>
         <button className={styles.cardButton}>View Recipe</button>

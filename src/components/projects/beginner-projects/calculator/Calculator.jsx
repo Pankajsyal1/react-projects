@@ -20,10 +20,11 @@ const CalculatorApp = () => {
   }
 
   return (
-    <>
+    <div className="text-center">
       <AppHeading sno={4} title={"Calculator App"} />
       <div className={styles.calculator}>
-        <div className={styles.display}>{inputValue}</div>
+        <div className={styles.display}>{inputValue || "0"}</div>
+
         <div className={styles.buttonRow}>
           <button className={`${styles.button} ${styles.buttonClear}`} onClick={handleClear}>
             C
@@ -40,48 +41,27 @@ const CalculatorApp = () => {
         </div>
 
         <div className={styles.buttonRow}>
-          <button className={styles.button} onClick={() => handleDisplay('7')}>
-            7
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('8')}>
-            8
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('9')}>
-            9
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('+')}>
-            +
-          </button>
+          {[7, 8, 9, '+'].map((item) => (
+            <button key={item} className={styles.button} onClick={() => handleDisplay(item)}>
+              {item}
+            </button>
+          ))}
         </div>
 
         <div className={styles.buttonRow}>
-          <button className={styles.button} onClick={() => handleDisplay('4')}>
-            4
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('5')}>
-            5
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('6')}>
-            6
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('(')}>
-            (
-          </button>
+          {[4, 5, 6, '('].map((item) => (
+            <button key={item} className={styles.button} onClick={() => handleDisplay(item)}>
+              {item}
+            </button>
+          ))}
         </div>
 
         <div className={styles.buttonRow}>
-          <button className={styles.button} onClick={() => handleDisplay('1')}>
-            1
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('2')}>
-            2
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay('3')}>
-            3
-          </button>
-          <button className={styles.button} onClick={() => handleDisplay(')')}>
-            )
-          </button>
+          {[1, 2, 3, ')'].map((item) => (
+            <button key={item} className={styles.button} onClick={() => handleDisplay(item)}>
+              {item}
+            </button>
+          ))}
         </div>
 
         <div className={styles.buttonRow}>
@@ -99,7 +79,7 @@ const CalculatorApp = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

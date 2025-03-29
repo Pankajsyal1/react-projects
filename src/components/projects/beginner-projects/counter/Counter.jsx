@@ -10,7 +10,7 @@ const CounterApp = () => {
     alert("Please enter a valid amount")
   }
   return (
-    <>
+    <div className="bg-slate-950 p-5 rounded-md max-w-[350px]">
       <AppHeading sno={1} title={"Counter App"} />
       <h2 className={styles.number}>Counter: {count}</h2>
       <input style={styles.input} type="number" placeholder="Please enter amount" value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} />
@@ -20,7 +20,7 @@ const CounterApp = () => {
         <button onClick={() => setCount(0)}>Reset</button>
         <button onClick={() => setCount(count + amount)}>Increment by {amount}</button>
       </div>
-    </>
+    </div>
   )
 }
 

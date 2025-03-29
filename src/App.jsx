@@ -1,6 +1,5 @@
 import { lazy } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import NotFound from "./404"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -14,6 +13,8 @@ const Accordion = lazy(() => import("./pages/accordion-app"))
 const Projects = lazy(() => import("./pages/all-projects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
 const FormValidation = lazy(() => import("./pages/form-validation-app"))
+const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
+const NotFound = lazy(() => import("./404"))
 
 const routes = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const routes = createBrowserRouter([
       { path: "/testimonials", element: <Testimonials /> },
       { path: "/accordion", element: <Accordion /> },
       { path: "/form-validation", element: <FormValidation /> },
-      // { path: "/advanced-filter", element: <AdvancedFilter /> },
+      { path: "/advanced-filter", element: <AdvancedFilterApp /> },
       { path: "*", element: <NotFound /> },
     ]
   }

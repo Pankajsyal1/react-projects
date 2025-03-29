@@ -16,8 +16,14 @@ const ThemeTogglerApp = () => {
   return (
     <section className={styles['section']} style={{ backgroundColor, color: textColor }}>
       <AppHeading sno={5} title={"Color Toggler App"} />
+      <section className={styles["content"]}>
+        <h1>
+          Welcome To A <br /> Real World..
+        </h1>
+      </section>
       <button
         onClick={handleClick}
+        className='my-4'
         style={{
           buttonStyle,
           color: textColor,
@@ -26,11 +32,6 @@ const ThemeTogglerApp = () => {
       >
         {backgroundColor == "#1b1b1b" ? "Black Theme" : "White Theme"}
       </button>
-      <section className={styles["content"]}>
-        <h1>
-          Welcome To A <br /> Real World..
-        </h1>
-      </section>
     </section>
   )
 }

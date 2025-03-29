@@ -26,15 +26,15 @@ const HiddenSearchBarApp = () => {
   // e.target.className==="container"
 
   return (
-    <div className="p-4" style={{ backgroundColor: color.bgColor, color: color.textColor }}>
+    <div className="p-4" >
       <AppHeading sno={6} title={"Search Icon Toggler App"} />
       {!showInput && <div className="flex gap-1 items-center">
         <span onClick={handleClick}><SearchIcon /></span>
         <p className="mt-1">Click on search icon to search...</p>
       </div>
       }
-      {showInput && <div className="flex"><input placeholder="Search something..." className="border border-gray-200 px-4 py-1.5 outline-0 hover:border-gray-500" />
-        <button className="bg-red-500 text-white w-[37px] text-xs" onClick={handleCancel}>X</button></div>
+      {showInput && <div className="flex"><input placeholder="Search something..." className="border border-slate-800 px-4 py-1.5 outline-0 hover:border-gray-500 text-black" />
+        <button className="bg-slate-800 text-white w-[37px] text-xs" onClick={handleCancel}>X</button></div>
       }
     </div >
   )

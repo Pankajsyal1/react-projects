@@ -1,0 +1,83 @@
+.card-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Tablet (max-width: 1024px) - 2 columns */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 768px) - 1 column */
+@media (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 768px) - 1 column */
+@media (max-width: 575px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.card {
+  border: 2px solid rgb(51, 51, 51);
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 1);
+}
+
+.card-img {
+  width: 100%;
+  /* Responsive image */
+  max-width: 13rem;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-reviews {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center reviews */
+}
+
+.rating-star {
+  color: #d5ab55;
+}
+
+.total-reviews {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bag-icon {
+  color: #fff;
+}

@@ -21,7 +21,7 @@ const TestimonialsApp = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 3000);
+    }, 6000);
 
     // Cleanup interval to prevent memory leaks
     return () => clearInterval(interval);
@@ -29,9 +29,9 @@ const TestimonialsApp = () => {
 
   // console.log((currentIndex + testimonials.length - 1) % testimonials.length)
   return (
-    <div>
+    <div className='text-center'>
       <AppHeading sno={7} title={"Testimonial App"} />
-      <div className='w-[450px] mx-auto text-center bg-white text-black p-8 rounded-md'>
+      <div className='w-[280px] lg:w-[450px] mx-auto text-center bg-white text-black p-8 rounded-md'>
         <p>{testimonials[currentIndex].quote}</p>
         <h6>{testimonials[currentIndex].author}</h6>
       </div>

@@ -5,6 +5,8 @@ body .section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 32px 16px;
+  border-radius: 4px;
 }
 
 .section button {
@@ -18,4 +20,14 @@ body .section {
   font-size: 5rem;
   font-family: 'Bungee Outline', cursive;
   line-height: 80px;
+
+  @media all and (max-width:991px) {
+    font-size: 2.5rem;
+    line-height: 60px;
+  }
+
+  @media all and (max-width:575px) {
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
 }

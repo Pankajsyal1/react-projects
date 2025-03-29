@@ -1,6 +1,6 @@
 .number {
   font-size: 1.5rem;
-  margin-top: 8px;
+  margin-block: 8px;
 }
 
 .btns-container {
@@ -8,6 +8,7 @@
   margin-top: 5rem;
   gap: 12px;
   margin-top: 32px;
+  flex-wrap: wrap;
 }
 
 input {

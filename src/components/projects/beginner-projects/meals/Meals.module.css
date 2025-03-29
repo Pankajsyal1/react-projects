@@ -25,7 +25,7 @@
 
 .cardImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -42,6 +42,11 @@
   font-weight: bold;
   color: #333333;
   margin: 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardButton {
