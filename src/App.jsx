@@ -1,5 +1,6 @@
 import { lazy } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import ProjectLayout from "./layouts/ProjectLayout"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -22,16 +23,21 @@ const routes = createBrowserRouter([
     children: [
       { path: "", index: true, element: <Home /> },
       { path: "/projects", element: <Projects /> },
-      { path: "/counter", element: <Counter /> },
-      { path: "/todos", element: <Todos /> },
-      { path: "/meals", element: <Meals /> },
-      { path: "/calculator", element: <Calculator /> },
-      { path: "/theme-toggler", element: <ThemeToggler /> },
-      { path: "/search-bar", element: <HiddenSearchBar /> },
-      { path: "/testimonials", element: <Testimonials /> },
-      { path: "/accordion", element: <Accordion /> },
-      { path: "/form-validation", element: <FormValidation /> },
-      { path: "/advanced-filter", element: <AdvancedFilterApp /> },
+      {
+        path: "", element: <ProjectLayout />,
+        children: [
+          { path: "/counter", element: <Counter /> },
+          { path: "/todos", element: <Todos /> },
+          { path: "/meals", element: <Meals /> },
+          { path: "/calculator", element: <Calculator /> },
+          { path: "/theme-toggler", element: <ThemeToggler /> },
+          { path: "/search-bar", element: <HiddenSearchBar /> },
+          { path: "/testimonials", element: <Testimonials /> },
+          { path: "/accordion", element: <Accordion /> },
+          { path: "/form-validation", element: <FormValidation /> },
+          { path: "/advanced-filter", element: <AdvancedFilterApp /> },
+        ]
+      },
       { path: "*", element: <NotFound /> },
     ]
   }

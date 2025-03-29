@@ -6,6 +6,7 @@ import Navigation from './components/Navigation/Nav';
 import Recommended from './components/Recommended/Recommended';
 import Products from './components/Products/Products';
 import Card from './components/common/Card';
+import AppHeading from "../../components/common/AppHeading";
 
 const AdvancedFilterApp = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -76,36 +77,39 @@ const AdvancedFilterApp = () => {
   const result = filteredData(products, selectedCategory, query);
 
   return (
-    <div className="flex">
-      {/* Sidebar - Hidden on small screens, visible on md+ */}
-      <div className="hidden md:flex">
-        <Sidebar handleChange={handleChange} />
-      </div>
+    <>
+      <AppHeading sno={1} title={"Ecommerce Filter"} />
+      <div className="flex">
+        {/* Sidebar - Hidden on small screens, visible on md+ */}
+        <div className="hidden md:flex">
+          <Sidebar handleChange={handleChange} />
+        </div>
 
-      {/* Sidebar Drawer for Small Screens */}
-      {isSidebarOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={toggleSidebar}></div>
-      )}
-      <div
-        className={`fixed left-0 top-0 h-full bg-slate-800 shadow-lg w-60 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out md:hidden z-50 p-8 overflow-y-auto overflow-x-hidden`}
-      >
-        <Sidebar handleChange={handleChange} />
-        <button
-          className="absolute top-4 right-4 text-gray-700"
-          onClick={toggleSidebar}
+        {/* Sidebar Drawer for Small Screens */}
+        {isSidebarOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={toggleSidebar}></div>
+        )}
+        <div
+          className={`fixed left-0 top-0 h-full bg-slate-800 shadow-lg w-60 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } transition-transform duration-300 ease-in-out md:hidden z-50 p-8 overflow-y-auto overflow-x-hidden`}
         >
-          ✖
-        </button>
-      </div>
+          <Sidebar handleChange={handleChange} />
+          <button
+            className="absolute top-4 right-4 text-gray-700"
+            onClick={toggleSidebar}
+          >
+            ✖
+          </button>
+        </div>
 
-      {/* Main Content */}
-      <div className="flex-1 ps-8">
-        <Navigation query={query} handleInputChange={handleInputChange} toggleSidebar={toggleSidebar} />
-        <Recommended handleClick={handleClick} />
-        <Products result={result} />
+        {/* Main Content */}
+        <div className="flex-1 ps-8">
+          <Navigation query={query} handleInputChange={handleInputChange} toggleSidebar={toggleSidebar} />
+          <Recommended handleClick={handleClick} />
+          <Products result={result} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
