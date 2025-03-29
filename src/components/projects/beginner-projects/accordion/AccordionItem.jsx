@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 const AccordionItem = (props) => {
   const [isActive, setIsActive] = useState(false);
-  console.log(props);
 
   const { title, content, idx } = props;
 

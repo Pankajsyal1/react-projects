@@ -35,18 +35,12 @@ li {
 
 
 
-html,
-body,
-#root {
-  @apply h-full;
-}
-
 #root {
   @apply flex flex-col;
 }
 
 main {
-  @apply flex-1;
+  min-height: 100vh;
 }
 
 

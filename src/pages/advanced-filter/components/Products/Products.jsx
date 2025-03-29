@@ -2,7 +2,6 @@
 import styles from "./Product.module.css";
 
 const Products = ({ result }) => {
-  console.log(result);
   return (
     <>
       {result.length > 0 ? <article className={styles["card-container"]}>{result}</article> :

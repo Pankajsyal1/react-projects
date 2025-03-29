@@ -15,8 +15,6 @@ const CalculatorApp = () => {
 
   const handleCalculate = () => {
     setInputValue(eval(inputValue));
-    console.log(inputValue);
-
   }
 
   return (

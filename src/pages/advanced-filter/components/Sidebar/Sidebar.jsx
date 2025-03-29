@@ -4,14 +4,13 @@ import Colors from "./Colors/Colors";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = ({ handleChange }) => {
-  console.log(handleChange);
 
   return (
     <>
       <section className={styles["sidebar"]}>
-        <div className={styles["logo-container"]}>
+        {/* <div className={styles["logo-container"]}>
           <h1>🛒</h1>
-        </div>
+        </div> */}
         <Category handleChange={handleChange} />
         <Price handleChange={handleChange} />
         <Colors handleChange={handleChange} />

@@ -42,6 +42,7 @@ const Profile = () => {
           <i>- Currently working as Frontend Developer</i>
           <i>- 4+ years of experience</i>
           <i>- Frontend Developer</i>
+          <i>- React Native Developer</i>
           <i>- UI Developer</i>
           <i>- Creative UIUX Designer</i>
           <i>- Blogger</i>
