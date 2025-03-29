@@ -103,7 +103,7 @@ const AdvancedFilterApp = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 ps-8">
+        <div className="flex-1 pl-0 md:pl-8">
           <Navigation query={query} handleInputChange={handleInputChange} toggleSidebar={toggleSidebar} />
           <Recommended handleClick={handleClick} />
           <Products result={result} />
