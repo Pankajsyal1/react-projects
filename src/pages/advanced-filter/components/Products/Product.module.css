@@ -51,14 +51,12 @@
 .card-title {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  text-align: center;
 }
 
 .card-reviews {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   /* Center reviews */
 }
 
