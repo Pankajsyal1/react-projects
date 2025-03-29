@@ -1,0 +1,61 @@
+@import "../variables";
+
+.my-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem 0;
+  background: #fff;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+
+  .my-navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+
+    .brand-logo {
+      color: $xolcy-primary-color;
+    }
+  }
+
+  .my-navbar-toggle {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .my-navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .my-navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .my-navbar-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #333;
+      }
+
+      &.my-navbar-link-build {
+        color: #007bff;
+        font-weight: bold;
+      }
+    }
+  }
+}

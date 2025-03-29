@@ -17,6 +17,7 @@ export const allProjects = [
     type: "Intermediate Projects",
     projects: [
       { path: "/advanced-filter", title: "Ecommerce Filter" },
+      // { path: "/xolcy", title: "xolcy Landing page" },
     ]
   }
 ]

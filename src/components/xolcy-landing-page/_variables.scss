@@ -1,0 +1,29 @@
+$xolcy-primary-color: #6d62fc;
+$xolcy-text-color: #a5a5bf;
+
+
+.text-justify {
+  text-align: justify;
+}
+
+
+// Define breakpoint variables using a map
+$breakpoints: (
+  xs: 320px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Mixin to handle breakpoints using a loop
+@mixin respond($breakpoint) {
+  @each $key, $value in $breakpoints {
+    @if $breakpoint ==$key {
+      @media (max-width: #{$value}) {
+        @content;
+      }
+    }
+  }
+}

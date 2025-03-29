@@ -1,0 +1,40 @@
+.stats-section {
+  padding: 5rem 0;
+  background-image: url('https://themesdesign.in/xolcy/layout/images/counterbg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  .stats-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats-number {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .stats-text {
+    font-size: 1.25rem;
+    color: #eee;
+    margin: 0;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../variables";
+
+.swiper-slide {
+  height: auto;
+}
+
+
+.swiper-pagination-bullet {
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background: $xolcy-primary-color;
+
+}

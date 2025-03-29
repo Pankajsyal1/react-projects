@@ -1,0 +1,40 @@
+@import "../variables";
+
+.hero {
+  background-color: #f8f9fa;
+  background-image: url("../../../assets//images/hero-one-3-bg.png");
+  background-position: center 0px;
+  background-repeat: no-repeat;
+  height: calc(100vh - 78px);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  .hero-subtitle {
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: $xolcy-primary-color;
+    background-color: rgba($xolcy-primary-color, 0.1);
+  }
+
+  // .hero-title {
+  // }
+
+  .hero-description {
+    color: $xolcy-text-color;
+  }
+
+  // .hero-buttons {
+  // }
+}
+
+
+.btn-primary {
+  background-color: $xolcy-primary-color;
+}
+
+.btn-outline-primary {
+  border-color: $xolcy-primary-color;
+  color: $xolcy-primary-color;
+}

@@ -15,6 +15,7 @@ const Projects = lazy(() => import("./pages/all-projects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
 const FormValidation = lazy(() => import("./pages/form-validation-app"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
+const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
 const NotFound = lazy(() => import("./404"))
 
 const routes = createBrowserRouter([
@@ -38,9 +39,10 @@ const routes = createBrowserRouter([
           { path: "/advanced-filter", element: <AdvancedFilterApp /> },
         ]
       },
-      { path: "*", element: <NotFound /> },
-    ]
-  }
+    ],
+  },
+  // { path: "/xolcy", element: <XolcyLandingPage /> },
+  { path: "*", element: <NotFound /> },
 ])
 
 const App = () => {

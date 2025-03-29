@@ -1,0 +1,38 @@
+.contact-us-container {
+  padding: 5rem 0;
+  background-image: url('https://themesdesign.in/xolcy/layout/images/contact-bg.png');
+  background-color: #f9f9fd;
+}
+
+
+.contact-us-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(180, 140, 255, 0.1),
+    rgba(255, 180, 210, 0.1)
+  );
+  z-index: -1;
+  clip-path: circle(50% at 0 0);
+}
+
+.contact-us-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top left,
+    rgba(180, 140, 255, 0.1),
+    rgba(255, 180, 210, 0.1)
+  );
+  z-index: -1;
+  clip-path: circle(50% at 100% 100%);
+}
