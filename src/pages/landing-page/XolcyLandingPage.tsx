@@ -8,21 +8,21 @@ import PricingSection from '../../components/xolcy-landing-page/Pricing/PricingS
 import LogosSection from '../../components/xolcy-landing-page/Logos/LogosSection'
 import ContactUsSection from '../../components/xolcy-landing-page/ContactUs/ContactUsSection'
 import MyFooter from '../../components/xolcy-landing-page/Footer/MyFooter'
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const XolcyLandingPage = () => {
-  function BootstrapPage() {
-    useEffect(() => {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js"); // Load Bootstrap JS
-    }, []);
+  // function BootstrapPage() {
+  //   useEffect(() => {
+  //     require("bootstrap/dist/js/bootstrap.bundle.min.js"); // Load Bootstrap JS
+  //   }, []);
 
-    return <div className="container">Bootstrap Page</div>;
-  }
+  //   return <div className="container">Bootstrap Page</div>;
+  // }
 
 
   return (
     <>
-      <HeroSection />
+      {/* <HeroSection />
       <OurServices />
       <Features />
       <ClientSays />
@@ -30,7 +30,7 @@ const XolcyLandingPage = () => {
       <PricingSection />
       <LogosSection />
       <ContactUsSection />
-      <MyFooter />
+      <MyFooter /> */}
     </>
   )
 }
