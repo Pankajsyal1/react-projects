@@ -18,6 +18,7 @@ export const allProjects = [
     projects: [
       { path: "/advanced-filter", title: "Ecommerce Filter" },
       { path: "/weather-app", title: "Weather App" },
+      { path: "/countdown-app", title: "Countdown App" },
       // { path: "/xolcy", title: "xolcy Landing page" },
     ]
   }

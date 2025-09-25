@@ -2,6 +2,7 @@ import { lazy } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ProjectLayout from "./layouts/ProjectLayout"
 import WeatherApp from "./pages/weather-app"
+import CountDown from "./components/projects/intermediate-projects/CountDown"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -39,11 +40,12 @@ const routes = createBrowserRouter([
           { path: "/form-validation", element: <FormValidation /> },
           { path: "/advanced-filter", element: <AdvancedFilterApp /> },
           { path: "/weather-app", element: <WeatherApp /> },
+          { path: "/countdown-app", element: <CountDown /> },
+          { path: "/xolcy", element: <XolcyLandingPage /> },
         ]
       },
     ],
   },
-  // { path: "/xolcy", element: <XolcyLandingPage /> },
   { path: "*", element: <NotFound /> },
 ])
 
