@@ -18,8 +18,8 @@ const CardGrid = (props) => {
             </div>
           </div>
         ))
-      ) : items.length > 0 ? (
-        items.map((meal) => <Card key={meal.idMeal} meal={meal} />)
+      ) : items?.length > 0 ? (
+        items?.map((meal) => <Card key={meal?.idMeal} meal={meal} />)
       ) : (
         <p>No meal found</p>
       )}
