@@ -25,3 +25,6 @@ dist-ssr
 
 
 README.md
+
+# zip files
+*.zip
