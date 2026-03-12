@@ -7,7 +7,7 @@ const AccordionItem = ({ title, content, idx }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="bg-white/70 backdrop-blur-xl border border-dark/5 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-dark/5 transition-all duration-300">
+    <div className="bg-white/70 backdrop-blur-xl border border-dark/5 rounded-4xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-dark/5 transition-all duration-300">
       <button
         onClick={() => setIsActive(!isActive)}
         className="w-full flex items-center justify-between p-8 text-left focus:outline-none group"
@@ -34,7 +34,7 @@ const AccordionItem = ({ title, content, idx }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <div className="px-8 pb-8 pt-0 border-t border-dark/5 mt-[-1px]">
+            <div className="px-8 pb-8 pt-0 border-t border-dark/5 -mt-px">
               <p className="text-secondary font-bold leading-relaxed pt-6">
                 {content}
               </p>

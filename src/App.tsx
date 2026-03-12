@@ -1,8 +1,8 @@
 import { lazy } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import ProjectLayout from "./layouts/ProjectLayout"
 import WeatherApp from "./pages/weather-app"
 import CountDown from "./components/projects/intermediate-projects/CountDown"
+import ProjectLayout from "./layouts/ProjectLayout"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))

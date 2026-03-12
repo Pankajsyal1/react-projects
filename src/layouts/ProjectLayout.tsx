@@ -1,7 +1,11 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import Button from "../pages/advanced-filter/components/common/Button";
+import type { ReactNode } from "react";
 
-const ProjectLayout = ({ children }) => {
+type ProjectLayoutProps = {
+    children?: ReactNode;
+};
+
+const ProjectLayout = ({ children }: ProjectLayoutProps) => {
     const navigate = useNavigate();
 
     return (
