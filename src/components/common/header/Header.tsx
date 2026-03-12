@@ -94,7 +94,7 @@ function Header() {
             <div className="flex items-center gap-8">
               <div className="flex items-center gap-2 group cursor-default">
                 <FaEnvelope className="text-primary group-hover:scale-110 transition-transform" size={10} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-dark/60">mpankaj.syal1@gmail.com</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-dark/60">pankaj.syal1@gmail.com</span>
               </div>
               <div className="flex items-center gap-2 group cursor-default">
                 <FaPhoneAlt className="text-primary group-hover:scale-110 transition-transform" size={10} />
@@ -186,7 +186,7 @@ function Header() {
 
               {/* CTA Button */}
               <motion.a
-                href="mailto:mpankaj.syal1@gmail.com"
+                href="mailto:pankaj.syal1@gmail.com"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-shimmer px-8 py-3.5 rounded-2xl bg-gradient-to-r from-primary via-primary to-purple-600 text-white font-black text-[10px] uppercase tracking-widest shadow-xl shadow-primary/20 no-underline whitespace-nowrap"
@@ -270,7 +270,7 @@ function Header() {
                   <div className="grid grid-cols-1 gap-6">
                      <div className="flex flex-col gap-2">
                         <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary/40">Quick Contact</span>
-                        <a href="mailto:mpankaj.syal1@gmail.com" className="text-dark font-black text-sm no-underline">mpankaj.syal1@gmail.com</a>
+                        <a href="mailto:pankaj.syal1@gmail.com" className="text-dark font-black text-sm no-underline">pankaj.syal1@gmail.com</a>
                      </div>
                      <div className="flex flex-col gap-4">
                         <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary/40">Follow</span>
@@ -279,7 +279,7 @@ function Header() {
                   </div>
                   
                   <a
-                    href="mailto:mpankaj.syal1@gmail.com"
+                    href="mailto:pankaj.syal1@gmail.com"
                     className="btn-shimmer block w-full text-center py-5 rounded-3xl bg-dark text-white font-black text-sm uppercase tracking-[0.3em] no-underline shadow-2xl"
                   >
                     Start Project

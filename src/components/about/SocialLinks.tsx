@@ -5,7 +5,7 @@ const socialData = [
   { name: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/pankaj-kumar-a1641ba6/", gradient: "from-[#0077b5] to-[#0066a0]" },
   { name: "Twitter", icon: FaTwitter, href: "https://twitter.com/pankajk76520654", gradient: "from-[#1da1f2] to-[#0d8de0]" },
   { name: "Portfolio", icon: FaGlobe, href: "https://pankaj-portfolio-reactjs.vercel.app/", gradient: "from-emerald-500 to-green-600" },
-  { name: "Email", icon: FaEnvelope, href: "mailto:mpankaj.syal1@gmail.com", gradient: "from-[#ea4335] to-[#d93025]" },
+  { name: "Email", icon: FaEnvelope, href: "mailto:pankaj.syal1@gmail.com", gradient: "from-[#ea4335] to-[#d93025]" },
   { name: "WhatsApp", icon: FaWhatsapp, href: "https://api.whatsapp.com/send/?phone=919478629522", gradient: "from-[#25d366] to-[#128c7e]" },
   { name: "Telegram", icon: FaTelegramPlane, href: "https://telegram.me/panku522", gradient: "from-[#0088cc] to-[#0077b5]" },
   { name: "Skype", icon: FaSkype, href: "https://join.skype.com/invite/WJDN0F76RCeI", gradient: "from-[#00aff0] to-[#0099d9]" },
