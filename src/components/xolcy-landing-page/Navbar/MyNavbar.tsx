@@ -28,7 +28,7 @@ const MyNavbar: React.FC = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled 
           ? 'bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] py-3' 
           : 'bg-transparent py-5'

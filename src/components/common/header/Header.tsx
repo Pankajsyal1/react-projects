@@ -87,9 +87,9 @@ function Header() {
         )}
       </AnimatePresence>
 
-      <header className="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+      <header className="sticky top-0 left-0 w-full z-50 transition-all duration-500">
         {/* Top Bar Navigation */}
-        <div className={`hidden lg:block py-2.5 transition-all duration-500 border-b border-dark/5 ${scrolled ? 'translate-y-[-100%] opacity-0' : 'bg-white/50 backdrop-blur-sm'}`}>
+        <div className={`hidden lg:block transition-all duration-500 border-b border-dark/5 overflow-hidden ${scrolled ? 'max-h-0 py-0 -translate-y-2 opacity-0' : 'max-h-10 py-2.5 bg-white/50 backdrop-blur-sm'}`}>
           <div className="container mx-auto px-6 flex justify-between items-center h-6">
             <div className="flex items-center gap-8">
               <div className="flex items-center gap-2 group cursor-default">
