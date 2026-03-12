@@ -1,6 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type CustomerState = {
+  fullName: string;
+  nationalID: string;
+  createdAt: string;
+};
+
+type CreateCustomerPayload = {
+  fullName: string;
+  nationalID: string;
+  createdAt: string;
+};
+
+const initialState: CustomerState = {
   fullName: "",
   nationalID: "",
   createdAt: "",
@@ -11,7 +23,7 @@ const customerSlice = createSlice({
   initialState,
   reducers: {
     createCustomer: {
-      prepare(fullName, nationalID) {
+      prepare(fullName: string, nationalID: string) {
         return {
           payload: {
             fullName,
@@ -20,13 +32,13 @@ const customerSlice = createSlice({
           },
         };
       },
-      reducer(state, action) {
+      reducer(state, action: PayloadAction<CreateCustomerPayload>) {
         state.fullName = action.payload.fullName;
         state.nationalID = action.payload.nationalID;
         state.createdAt = action.payload.createdAt;
       },
     },
-    updateName(state, action) {
+    updateName(state, action: PayloadAction<string>) {
       state.fullName = action.payload;
     },
   },

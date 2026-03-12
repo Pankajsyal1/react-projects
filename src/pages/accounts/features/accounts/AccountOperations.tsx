@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "../../store";
 import { deposit, payLoan, requestLoan, withdraw } from "./accountSlice";
 
 function AccountOperations() {
@@ -9,13 +10,13 @@ function AccountOperations() {
   const [loanPurpose, setLoanPurpose] = useState("");
   const [currency, setCurrency] = useState("USD");
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const {
     loan: currentLoan,
     loanPurpose: currentLoanPurpose,
     balance,
     isLoading,
-  } = useSelector((store) => store.account);
+  } = useSelector((store: RootState) => store.account);
 
   console.log(balance);
 

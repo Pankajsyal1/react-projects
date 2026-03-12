@@ -1,6 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type AccountState = {
+  balance: number;
+  loan: number;
+  loanPurpose: string;
+  isLoading: boolean;
+};
+
+type RequestLoanPayload = {
+  amount: number;
+  purpose: string;
+};
+
+const initialState: AccountState = {
   balance: 0,
   loan: 0,
   loanPurpose: "",
@@ -11,21 +23,21 @@ const accountSlice = createSlice({
   name: "account",
   initialState,
   reducers: {
-    deposit(state, action) {
+    deposit(state, action: PayloadAction<number>) {
       state.balance += action.payload;
       state.isLoading = false;
     },
-    withdraw(state, action) {
+    withdraw(state, action: PayloadAction<number>) {
       state.balance -= action.payload;
     },
     requestLoan: {
-      prepare(amount, purpose) {
+      prepare(amount: number, purpose: string) {
         return {
           payload: { amount, purpose },
         };
       },
 
-      reducer(state, action) {
+      reducer(state, action: PayloadAction<RequestLoanPayload>) {
         if (state.loan > 0) return;
 
         state.loan = action.payload.amount;
@@ -46,10 +58,10 @@ const accountSlice = createSlice({
 
 export const { withdraw, requestLoan, payLoan } = accountSlice.actions;
 
-export function deposit(amount, currency) {
+export function deposit(amount: number, currency: string) {
   if (currency === "USD") return { type: "account/deposit", payload: amount };
 
-  return async function (dispatch, getState) {
+  return async function (dispatch: (action: PayloadAction<number> | { type: string }) => void) {
     dispatch({ type: "account/convertingCurrency" });
 
     const res = await fetch(

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import WeatherApp from "./pages/weather-app"
 import CountDown from "./components/projects/intermediate-projects/CountDown"
 import ProjectLayout from "./layouts/ProjectLayout"
+import Accounts from "./pages/accounts/Accounts"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -29,6 +30,8 @@ const routes = createBrowserRouter([
       {
         path: "", element: <ProjectLayout />,
         children: [
+          { path: "/accordion", element: <Accordion /> },
+          { path: "/accounts", element: <Accounts /> },
           { path: "/counter", element: <Counter /> },
           { path: "/todos", element: <Todos /> },
           { path: "/meals", element: <Meals /> },
@@ -36,7 +39,6 @@ const routes = createBrowserRouter([
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/testimonials", element: <Testimonials /> },
-          { path: "/accordion", element: <Accordion /> },
           { path: "/form-validation", element: <FormValidation /> },
           { path: "/advanced-filter", element: <AdvancedFilterApp /> },
           { path: "/weather-app", element: <WeatherApp /> },
