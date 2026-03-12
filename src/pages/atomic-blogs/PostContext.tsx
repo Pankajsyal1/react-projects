@@ -1,5 +1,18 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import { faker } from "@faker-js/faker";
+
+type Post = {
+  title: string;
+  body: string;
+};
 
 function createRandomPost() {
   return {
@@ -9,10 +22,18 @@ function createRandomPost() {
 }
 
 // 1) CREATE A CONTEXT
-const PostContext = createContext();
+type PostContextValue = {
+  posts: Post[];
+  onAddPost: (post: Post) => void;
+  onClearPosts: () => void;
+  searchQuery: string;
+  setSearchQuery: Dispatch<SetStateAction<string>>;
+};
 
-function PostProvider({ children }) {
-  const [posts, setPosts] = useState(() =>
+const PostContext = createContext<PostContextValue | undefined>(undefined);
+
+function PostProvider({ children }: { children: ReactNode }) {
+  const [posts, setPosts] = useState<Post[]>(() =>
     Array.from({ length: 30 }, () => createRandomPost())
   );
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,7 +48,7 @@ function PostProvider({ children }) {
         )
       : posts;
 
-  function handleAddPost(post) {
+  function handleAddPost(post: Post) {
     setPosts((posts) => [post, ...posts]);
   }
 

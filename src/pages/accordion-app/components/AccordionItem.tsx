@@ -35,7 +35,7 @@ const AccordionItem = ({ title, content, idx }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <div className="px-8 pb-8 pt-0 border-t border-dark/5 -mt-px">
-              <p className="text-secondary font-bold leading-relaxed pt-6">
+              <p className="text-gray-700 font-medium leading-relaxed pt-6">
                 {content}
               </p>
             </div>

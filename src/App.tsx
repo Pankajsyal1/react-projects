@@ -4,6 +4,7 @@ import WeatherApp from "./pages/weather-app"
 import CountDown from "./components/projects/intermediate-projects/CountDown"
 import ProjectLayout from "./layouts/ProjectLayout"
 import Accounts from "./pages/accounts/Accounts"
+import AtomicBlogs from "./pages/atomic-blogs/AtomicBlogs"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -32,6 +33,8 @@ const routes = createBrowserRouter([
         children: [
           { path: "/accordion", element: <Accordion /> },
           { path: "/accounts", element: <Accounts /> },
+          { path: "/advanced-filter", element: <AdvancedFilterApp /> },
+          { path: "/atomic-blogs", element: <AtomicBlogs /> },
           { path: "/counter", element: <Counter /> },
           { path: "/todos", element: <Todos /> },
           { path: "/meals", element: <Meals /> },
@@ -40,7 +43,6 @@ const routes = createBrowserRouter([
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/testimonials", element: <Testimonials /> },
           { path: "/form-validation", element: <FormValidation /> },
-          { path: "/advanced-filter", element: <AdvancedFilterApp /> },
           { path: "/weather-app", element: <WeatherApp /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
