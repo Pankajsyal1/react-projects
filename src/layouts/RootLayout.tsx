@@ -8,7 +8,7 @@ const RootLayout = () => {
     <>
       <ScrollToTop />
       <Header />
-      <main className="flex-grow">
+      <main className="grow">
         <Outlet />
       </main>
       <Footer />

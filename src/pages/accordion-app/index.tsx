@@ -1,4 +1,4 @@
-import AccordionApp from '../../components/projects/beginner-projects/accordion/Accordion'
+import AccordionApp from "./components/Accordion"
 
 const Accordion = () => {
   return (
