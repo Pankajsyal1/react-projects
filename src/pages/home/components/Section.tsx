@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import SectionTitle from './SectionTitle'
-import Divider from '../Divider'
+import SectionTitle from '../../../components/ui/sections/SectionTitle'
+import Divider from '../../../components/ui/Divider'
 import { motion } from 'framer-motion'
 
 const Section = ({ title, children }) => {

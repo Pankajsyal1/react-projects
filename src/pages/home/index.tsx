@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
-import Profile from "../../components/about/Profile";
-import Section from "../../components/ui/sections/Section";
-import TechStacks from "../../components/about/TechStacks";
-import SocialLinks from "../../components/about/SocialLinks";
-import ProjectList from "../../components/projects/ProjectList";
+import Profile from "./components/Profile";
+import Section from "./components/Section";
+import TechStacks from "./components/TechStacks";
+import SocialLinks from "./components/SocialLinks";
+import ProjectList from "./components/ProjectList";
 
 const Home = () => {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FiSearch, FiX } from "react-icons/fi";
-import AppHeading from "../../../common/AppHeading";
+import AppHeading from "../../components/common/AppHeading";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HiddenSearchBarApp = () => {

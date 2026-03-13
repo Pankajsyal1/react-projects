@@ -13,7 +13,7 @@ const Counter = lazy(() => import("./pages/counter-app/Counter"))
 const Todos = lazy(() => import("./pages/todos-app"))
 const Meals = lazy(() => import("./pages/meals-app"))
 const Calculator = lazy(() => import("./pages/calculator-app"))
-const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app"))
+const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSearchBar"))
 const Testimonials = lazy(() => import("./pages/testimonials-app"))
 const Accordion = lazy(() => import("./pages/accordion-app"))
 const Projects = lazy(() => import("./pages/all-projects"))
@@ -42,9 +42,9 @@ const routes = createBrowserRouter([
           { path: "/todos", element: <Todos /> },
           { path: "/pizza", element: <PizzaView /> },
           { path: "/form-validation", element: <FormValidation /> },
+          { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/meals", element: <Meals /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
-          { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/testimonials", element: <Testimonials /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
