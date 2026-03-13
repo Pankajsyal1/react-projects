@@ -4,6 +4,7 @@ import { createOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
 import EmptyCart from '../cart/EmptyCart';
 import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '../../store';
 import { clearCart, getCart, getTotalCartPrice } from '../cart/cartSlice';
 import store from '../../store';
 import { formatCurrency } from '../../utils/helpers';
@@ -23,7 +24,7 @@ function CreateOrder() {
     position,
     address,
     error: errorAddress,
-  } = useSelector((state) => state.user);
+  } = useSelector((state: RootState) => state.user);
   const isLoadingAddress = addressStatus === 'loading';
 
   const navigation = useNavigation();
@@ -141,7 +142,7 @@ function CreateOrder() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const data = Object.fromEntries(formData) as Record<string, string>;
 
   const order = {
     ...data,
@@ -164,7 +165,7 @@ export async function action({ request }) {
   // Do NOT overuse
   store.dispatch(clearCart());
 
-  return redirect(`/order/${newOrder.id}`);
+  return redirect(`/pizza/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
