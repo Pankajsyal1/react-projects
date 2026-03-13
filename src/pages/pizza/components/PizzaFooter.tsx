@@ -1,9 +1,9 @@
-import styles from "../../styles/pizza.module.css";
+import styles from "../pizza.module.css";
 import PizzaOrder from "./PizzaOrder";
 
 function PizzaFooter() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 6;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);

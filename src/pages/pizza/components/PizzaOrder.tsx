@@ -1,4 +1,4 @@
-import styles from "../../styles/pizza.module.css";
+import styles from "../pizza.module.css";
 
 function PizzaOrder({ closeHour, openHour }) {
   return (

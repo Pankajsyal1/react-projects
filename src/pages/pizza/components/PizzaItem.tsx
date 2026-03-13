@@ -1,8 +1,6 @@
-import styles from "../../styles/pizza.module.css";
+import styles from "../pizza.module.css";
 
 function PizzaItem({ pizzaObj }) {
-  // console.log(pizzaObj);
-
   if (pizzaObj.soldOut) return null;
 
   return (

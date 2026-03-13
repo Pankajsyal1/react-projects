@@ -1,6 +1,6 @@
-import { pizzaData } from "../../data/pizzaData";
+import { pizzaData } from "../pizzaData";
 import PizzaItem from "./PizzaItem";
-import styles from "../../styles/pizza.module.css";
+import styles from "../pizza.module.css";
 
 function PizzaMenu() {
   const pizzas = pizzaData;

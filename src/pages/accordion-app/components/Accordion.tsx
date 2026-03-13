@@ -1,4 +1,4 @@
-import { accordionData } from "../../../data/content"
+import { accordionData } from "../data"
 import AppHeading from "../../../components/common/AppHeading"
 import AccordionItem from "./AccordionItem"
 

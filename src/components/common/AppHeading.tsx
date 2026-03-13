@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const AppHeading = ({ sno, title, description = null }) => {
+const AppHeading = ({ sno = null, title, description = null }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -8,7 +8,7 @@ const AppHeading = ({ sno, title, description = null }) => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="mt-10 mb-20 relative"
     >
-      <div className="flex items-center gap-4 mb-6">
+      {sno && <div className="flex items-center gap-4 mb-6">
         <motion.span
           initial={{ width: 0 }}
           animate={{ width: 40 }}
@@ -18,7 +18,7 @@ const AppHeading = ({ sno, title, description = null }) => {
         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
           Project Instance {sno || "00"}
         </span>
-      </div>
+      </div>}
 
       <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-dark tracking-tighter leading-[0.9] mb-4 relative">
         <span className="relative z-10">{title}</span>
