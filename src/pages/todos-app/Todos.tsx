@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { initialTodos } from '../../../../data/todos';
-import AppHeading from '../../../common/AppHeading';
+import { initialTodos } from '../../data/todos';
+import AppHeading from '../../components/common/AppHeading';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiPlus, FiTrash2, FiEdit3, FiCheck, FiX } from 'react-icons/fi';
 

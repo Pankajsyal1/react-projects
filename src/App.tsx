@@ -19,7 +19,7 @@ import fastPizzaStore from "./pages/fast-pizza/store"
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
 const Counter = lazy(() => import("./pages/counter-app/Counter"))
-const Todos = lazy(() => import("./pages/todos-app"))
+const Todos = lazy(() => import("./pages/todos-app/Todos"))
 const Meals = lazy(() => import("./pages/meals-app/Meals"))
 const Calculator = lazy(() => import("./pages/calculator-app"))
 const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSearchBar"))
@@ -48,7 +48,6 @@ const routes = createBrowserRouter([
           { path: "/calculator", element: <Calculator /> },
           { path: "/weather-app", element: <WeatherApp /> },
           { path: "/counter", element: <Counter /> },
-          { path: "/todos", element: <Todos /> },
           {
             path: "/pizza",
             element: (
@@ -88,6 +87,7 @@ const routes = createBrowserRouter([
           { path: "/form-validation", element: <FormValidation /> },
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/meals", element: <Meals /> },
+          { path: "/todos", element: <Todos /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/testimonials", element: <Testimonials /> },
           { path: "/countdown-app", element: <CountDown /> },
