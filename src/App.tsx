@@ -30,7 +30,7 @@ const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
 const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
 const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
-const NotFound = lazy(() => import("./404"))
+const NotFound = lazy(() => import("./pages/404"))
 
 const routes = createBrowserRouter([
   {
