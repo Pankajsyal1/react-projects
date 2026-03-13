@@ -50,9 +50,10 @@ function DateCounter() {
   };
 
   return (
-    <div className="counter">
-      <div>
+    <div className="mt-16 flex flex-col items-center gap-4 text-lg font-semibold">
+      <div className="flex items-center gap-3">
         <input
+          className="w-40 accent-teal-500"
           type="range"
           min="0"
           max="10"
@@ -62,16 +63,35 @@ function DateCounter() {
         <span>{step}</span>
       </div>
 
-      <div>
-        <button onClick={dec}>-</button>
-        <input value={count} onChange={defineCount} />
-        <button onClick={inc}>+</button>
+      <div className="flex items-center gap-3">
+        <button
+          className="rounded-full border border-slate-700 bg-slate-700 px-4 py-2 text-base transition hover:bg-slate-800"
+          onClick={dec}
+        >
+          -
+        </button>
+        <input
+          className="w-20 rounded-full border border-slate-700 bg-slate-800 px-3 py-2 text-center text-base"
+          value={count}
+          onChange={defineCount}
+        />
+        <button
+          className="rounded-full border border-slate-700 bg-slate-700 px-4 py-2 text-base transition hover:bg-slate-800"
+          onClick={inc}
+        >
+          +
+        </button>
       </div>
 
-      <p>{date.toDateString()}</p>
+      <p className="text-base text-slate-300">{date.toDateString()}</p>
 
       <div>
-        <button onClick={reset}>Reset</button>
+        <button
+          className="rounded-full border border-slate-700 bg-slate-700 px-5 py-2 text-base transition hover:bg-slate-800"
+          onClick={reset}
+        >
+          Reset
+        </button>
       </div>
     </div>
   );

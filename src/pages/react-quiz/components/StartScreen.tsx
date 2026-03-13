@@ -4,11 +4,15 @@ function StartScreen() {
   const { numQuestions, dispatch } = useQuiz();
 
   return (
-    <div className="start">
-      <h2>Welcome to The React Quiz!</h2>
-      <h3>{numQuestions} questions to test your React mastery</h3>
+    <div className="flex flex-col items-center text-center">
+      <h2 className="mb-2 text-3xl font-semibold sm:text-4xl">
+        Welcome to The React Quiz!
+      </h2>
+      <h3 className="mb-8 text-xl font-semibold text-slate-300">
+        {numQuestions} questions to test your React mastery
+      </h3>
       <button
-        className="btn btn-ui"
+        className="rounded-full border border-slate-700 bg-slate-700 px-6 py-3 text-lg transition hover:bg-slate-800"
         onClick={() => dispatch({ type: "start" })}
       >
         Let's start

@@ -14,13 +14,15 @@ function FinishScreen() {
 
   return (
     <>
-      <p className="result">
+      <p className="mb-4 rounded-full bg-teal-500 px-6 py-4 text-center text-lg font-medium text-slate-50">
         <span>{emoji}</span> You scored <strong>{points}</strong> out of{" "}
         {maxPossiblePoints} ({Math.ceil(percentage)}%)
       </p>
-      <p className="highscore">(Highscore: {highscore} points)</p>
+      <p className="mb-8 text-center text-base text-slate-300">
+        (Highscore: {highscore} points)
+      </p>
       <button
-        className="btn btn-ui"
+        className="rounded-full border border-slate-700 bg-slate-700 px-6 py-3 text-lg transition hover:bg-slate-800"
         onClick={() => dispatch({ type: "restart" })}
       >
         Restart quiz

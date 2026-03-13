@@ -1,10 +1,53 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  type Dispatch,
+  type ReactNode,
+} from "react";
+import questionsData from "../data/questions.json";
 
-const QuizContext = createContext();
+export type Question = {
+  question: string;
+  options: string[];
+  correctOption: number;
+  points: number;
+};
+
+type QuizStatus = "loading" | "error" | "ready" | "active" | "finished";
+
+type QuizState = {
+  questions: Question[];
+  status: QuizStatus;
+  index: number;
+  answer: number | null;
+  points: number;
+  highscore: number;
+  secondsRemaining: number | null;
+};
+
+type QuizAction =
+  | { type: "dataReceived"; payload: Question[] }
+  | { type: "dataFailed" }
+  | { type: "start" }
+  | { type: "newAnswer"; payload: number }
+  | { type: "nextQuestion" }
+  | { type: "finish" }
+  | { type: "restart" }
+  | { type: "tick" };
+
+type QuizContextValue = QuizState & {
+  numQuestions: number;
+  maxPossiblePoints: number;
+  dispatch: Dispatch<QuizAction>;
+};
+
+const QuizContext = createContext<QuizContextValue | undefined>(undefined);
 
 const SECS_PER_QUESTION = 30;
 
-const initialState = {
+const initialState: QuizState = {
   questions: [],
 
   // 'loading', 'error', 'ready', 'active', 'finished'
@@ -16,7 +59,7 @@ const initialState = {
   secondsRemaining: null,
 };
 
-function reducer(state, action) {
+function reducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
     case "dataReceived":
       return {
@@ -37,6 +80,8 @@ function reducer(state, action) {
       };
     case "newAnswer":
       const question = state.questions.at(state.index);
+
+      if (!question) return state;
 
       return {
         ...state,
@@ -59,10 +104,12 @@ function reducer(state, action) {
       return { ...initialState, questions: state.questions, status: "ready" };
 
     case "tick":
+      if (state.secondsRemaining === null) return state;
+      const nextSecondsRemaining = Math.max(state.secondsRemaining - 1, 0);
       return {
         ...state,
-        secondsRemaining: state.secondsRemaining - 1,
-        status: state.secondsRemaining === 0 ? "finished" : state.status,
+        secondsRemaining: nextSecondsRemaining,
+        status: nextSecondsRemaining === 0 ? "finished" : state.status,
       };
 
     default:
@@ -70,7 +117,11 @@ function reducer(state, action) {
   }
 }
 
-function QuizProvider({ children }) {
+type QuizProviderProps = {
+  children: ReactNode;
+};
+
+function QuizProvider({ children }: QuizProviderProps) {
   const [
     { questions, status, index, answer, points, highscore, secondsRemaining },
     dispatch,
@@ -83,10 +134,12 @@ function QuizProvider({ children }) {
   );
 
   useEffect(function () {
-    fetch("http://localhost:9000/questions")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", payload: data }))
-      .catch((err) => dispatch({ type: "dataFailed" }));
+    try {
+      const data = questionsData as { questions: Question[] };
+      dispatch({ type: "dataReceived", payload: data.questions });
+    } catch {
+      dispatch({ type: "dataFailed" });
+    }
   }, []);
 
   return (
@@ -110,7 +163,7 @@ function QuizProvider({ children }) {
   );
 }
 
-function useQuiz() {
+function useQuiz(): QuizContextValue {
   const context = useContext(QuizContext);
   if (context === undefined)
     throw new Error("QuizContext was used outside of the QuizProvider");

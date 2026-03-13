@@ -1,5 +1,5 @@
 function Footer({ children }) {
-  return <footer>{children}</footer>;
+  return <footer className="flex items-center justify-between">{children}</footer>;
 }
 
 export default Footer;

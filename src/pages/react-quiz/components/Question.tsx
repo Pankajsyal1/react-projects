@@ -5,11 +5,13 @@ function Question() {
   const { questions, index } = useQuiz();
   const question = questions.at(index);
 
-  console.log(question);
+  if (!question) return null;
 
   return (
     <div>
-      <h4>{question.question}</h4>
+      <h4 className="mb-6 text-xl font-semibold sm:text-2xl">
+        {question.question}
+      </h4>
       <Options question={question} />
     </div>
   );

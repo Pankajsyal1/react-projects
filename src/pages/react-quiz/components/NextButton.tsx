@@ -8,7 +8,7 @@ function NextButton() {
   if (index < numQuestions - 1)
     return (
       <button
-        className="btn btn-ui"
+        className="rounded-full border border-slate-700 bg-slate-700 px-6 py-3 text-lg transition hover:bg-slate-800"
         onClick={() => dispatch({ type: "nextQuestion" })}
       >
         Next
@@ -18,12 +18,14 @@ function NextButton() {
   if (index === numQuestions - 1)
     return (
       <button
-        className="btn btn-ui"
+        className="rounded-full border border-slate-700 bg-slate-700 px-6 py-3 text-lg transition hover:bg-slate-800"
         onClick={() => dispatch({ type: "finish" })}
       >
         Finish
       </button>
     );
+
+  return null;
 }
 
 export default NextButton;

@@ -4,8 +4,9 @@ import { useQuiz } from "../contexts/QuizContext";
 function Timer() {
   const { dispatch, secondsRemaining } = useQuiz();
 
-  const mins = Math.floor(secondsRemaining / 60);
-  const seconds = secondsRemaining % 60;
+  const remaining = secondsRemaining ?? 0;
+  const mins = Math.floor(remaining / 60);
+  const seconds = remaining % 60;
 
   useEffect(
     function () {
@@ -18,8 +19,10 @@ function Timer() {
     [dispatch]
   );
 
+  if (secondsRemaining === null) return null;
+
   return (
-    <div className="timer">
+    <div className="rounded-full border border-slate-700 px-6 py-2 text-base text-slate-300">
       {mins < 10 && "0"}
       {mins}:{seconds < 10 && "0"}
       {seconds}
