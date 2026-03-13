@@ -40,9 +40,6 @@ const Home = () => {
         <Section title={"Let's Connect"}>
           <SocialLinks />
         </Section>
-
-        {/* React projects */}
-        <ProjectList />
       </div>
     </div>
   );
