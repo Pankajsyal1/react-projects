@@ -50,7 +50,6 @@ const routes = createBrowserRouter([
           { path: "/advanced-filter", element: <AdvancedFilterApp /> },
           { path: "/atomic-blogs", element: <AtomicBlogs /> },
           { path: "/calculator", element: <Calculator /> },
-          { path: "/weather-app", element: <WeatherApp /> },
           { path: "/counter", element: <Counter /> },
           {
             path: "/pizza",
@@ -98,6 +97,7 @@ const routes = createBrowserRouter([
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/todos", element: <Todos /> },
           { path: "/travel-view", element: <TravelListView /> },
+          { path: "/weather-app", element: <WeatherApp /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
       },

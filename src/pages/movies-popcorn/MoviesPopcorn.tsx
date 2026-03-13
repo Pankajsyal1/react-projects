@@ -450,7 +450,7 @@ function MovieDetails({
             <div className="flex flex-1 flex-col gap-2">
               <h2 className="text-xl font-semibold text-white">{title}</h2>
               <p className="text-xs text-slate-300">
-                {released} ï¿½ {runtime}
+                {released} • {runtime}
               </p>
               <p className="text-xs text-slate-300">{genre}</p>
               <p className="text-xs text-slate-200">
