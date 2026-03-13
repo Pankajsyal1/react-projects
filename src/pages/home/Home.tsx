@@ -25,7 +25,7 @@ const Home = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 py-8 md:py-16">
+      <div className="relative z-10 container mx-auto px-6 py-8 md:pb-16">
         {/* About Section */}
         <Section title={""}>
           <Profile />

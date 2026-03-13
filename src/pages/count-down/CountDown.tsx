@@ -71,7 +71,7 @@ const CountDown = () => {
             </span>
             <motion.div
               key={count}
-              className="text-8xl font-black text-dark tracking-tighter tabular-nums"
+              className="text-4xl lg:text-6xl lg:text-8xl font-black text-dark tracking-tighter tabular-nums"
             >
               {count.toFixed(2)}
             </motion.div>

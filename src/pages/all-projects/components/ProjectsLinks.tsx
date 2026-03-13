@@ -29,7 +29,7 @@ const ProjectLinks = () => {
                   className="group flex w-full items-center justify-between gap-4 rounded-[1.75rem] border border-white/70 bg-white/80 px-4 py-4 shadow-[0_20px_60px_-50px_rgba(15,23,42,0.5)] transition-all duration-400 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white no-underline sm:gap-6 sm:px-6 sm:py-5"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="shrink-0 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/5 text-slate-900 shadow-inner transition group-hover:bg-primary/10 sm:h-12 sm:w-12">
+                    <div className="shrink-0 hidden sm:flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/5 text-slate-900 shadow-inner transition group-hover:bg-primary/10 sm:h-12 sm:w-12">
                       <span className="text-base sm:text-lg">.</span>
                     </div>
                     <div>
@@ -49,7 +49,7 @@ const ProjectLinks = () => {
                     <span className="text-[9px] font-black uppercase tracking-widest text-dark/50 group-hover:text-primary sm:text-[10px]">
                       View Project
                     </span>
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-dark/5 bg-white transition-all group-hover:bg-primary group-hover:border-primary sm:h-9 sm:w-9">
+                    <div className="shrink-0 flex h-8 w-8 items-center justify-center rounded-full border border-dark/5 bg-white transition-all group-hover:bg-primary group-hover:border-primary sm:h-9 sm:w-9">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-0.5">
                         <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-dark group-hover:text-white" />
                       </svg>
