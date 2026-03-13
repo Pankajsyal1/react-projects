@@ -5,7 +5,6 @@
   FaWhatsapp,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaPaperPlane,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -49,30 +48,30 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-slate-950 pt-24 pb-12 text-slate-100">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-slate-950 pt-24 pb-6 text-slate-100">
       <div className="absolute inset-0 pattern-grid opacity-[0.06] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.1)_1px,_transparent_1px)] [background-size:18px_18px] opacity-30 pointer-events-none" />     <div className="absolute top-0 right-0 h-[520px] w-[520px] translate-x-1/3 -translate-y-1/3 rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 h-[420px] w-[420px] -translate-x-1/3 translate-y-1/3 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 mb-20">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 mb-16 justify-between">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="flex items-center group no-underline mb-8">
-              <span className="text-gradient font-black text-4xl lg:text-5xl tracking-tighter transition-all duration-500 transform group-hover:scale-105">
-                PANKAJ
-              </span>
+            <div className="flex items-center gap-2 group no-underline mb-8">
               <motion.div
                 animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="w-3 h-3 rounded-full bg-primary ml-1"
               />
+              <span className="text-gradient font-bold text-4xl lg:text-5xl tracking-tighter transition-all duration-500 transform">
+                PANKAJ
+              </span>
             </div>
-            <p className="max-w-md text-lg font-semibold leading-relaxed text-slate-200/90 mb-10">
+            <p className="max-w-md text-lg font-medium leading-relaxed text-slate-200/90 mb-10">
               Crafing digital experiences that merge{" "}
               <span className="text-primary">technical excellence</span> with{" "}
               <span className="text-purple-400">aesthetic beauty</span>. Let's build
@@ -80,24 +79,20 @@ function Footer() {
             </p>
             <div className="flex flex-wrap gap-4">
               {socialLinks.map((social, idx) => (
-                <motion.a
+                <a
                   key={idx}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 shadow-xl shadow-black/10 hover:border-primary/30 transition-all group no-underline"
+                  style={{ willChange: "transform" }}
+                  className="flex items-center justify-center w-12 h-12 gap-3 rounded-2xl border border-white/10 bg-white/5 shadow-xl shadow-black/10 group no-underline transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:rotate-1 hover:border-primary/40 hover:bg-white/10 hover:shadow-2xl hover:shadow-primary/20 focus-visible:-translate-y-1 focus-visible:scale-[1.04] focus-visible:rotate-1"
                 >
                   <div
-                    className={`w-8 h-8 rounded-xl bg-gradient-to-br ${social.color} flex items-center justify-center text-white shadow-lg`}
+                    className={`flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br ${social.color}  text-white shadow-lg`}
                   >
                     <social.icon size={14} />
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
-                    {social.name}
-                  </span>
-                </motion.a>
+                </a>
               ))}
             </div>
           </motion.div>
@@ -105,29 +100,36 @@ function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 rounded-[2.5rem] border border-white/10 bg-white/5 p-10 lg:p-12 relative overflow-hidden group"
+            className="lg:col-span-6 lg:col-start-7 rounded-[2.5rem] border border-white/10 bg-white/5 p-10 lg:p-12 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors" />
+            <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-primary/10 blur-3xl group-hover:bg-primary/20 transition-colors" />
+            <div className="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-purple-500/10 blur-3xl group-hover:bg-purple-500/20 transition-colors" />
 
-            <h3 className="text-2xl font-black text-white mb-4 tracking-tight">
-              Stay in the loop
+            <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">
+              Start a project
             </h3>
-            <p className="text-slate-200/70 font-medium mb-8 text-sm">
-              Subscribe to get the latest insights on web development and design
-              trends.
+            <p className="text-slate-200/70 font-normal mb-8 text-sm max-w-md">
+              Tell me about your idea and I&apos;ll help shape it into a polished,
+              high‑performance web experience.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-              <input
-                type="email"
-                placeholder="Ex. hello@example.com"
-                className="flex-grow rounded-2xl border border-white/10 bg-white/10 px-6 py-5 text-sm font-semibold text-white placeholder:text-white/40 shadow-xl shadow-black/10 outline-none focus:ring-2 focus:ring-primary/30 transition-all"
-              />
-              <button className="btn-shimmer bg-white text-dark px-8 py-5 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 active:scale-95 transition-all">
-                Subscribe <FaPaperPlane size={12} />
-              </button>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://api.whatsapp.com/send/?phone=919478629522"
+                className="btn-shimmer px-8 py-4 rounded-2xl bg-white text-dark font-semibold text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-3 shadow-xl shadow-black/10 no-underline"
+              >
+                <FaWhatsapp size={12} />
+                Let&apos;s Collaborate
+              </a>
+              <a
+                href="mailto:pankaj.syal1@gmail.com"
+                className="px-8 py-4 rounded-2xl border border-white/10 text-white/80 font-semibold text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-3 hover:border-primary/40 hover:text-white transition-colors no-underline"
+              >
+                <FaEnvelope size={12} />
+                Email Me
+              </a>
             </div>
           </motion.div>
         </div>
@@ -138,7 +140,7 @@ function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white font-black uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
+            <h4 className="text-white font-semibold uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
               Explore
               <span className="absolute -bottom-2 left-0 w-6 h-1 bg-primary rounded-full" />
             </h4>
@@ -158,7 +160,7 @@ function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : "_self"}
                     rel={link.external ? "noopener noreferrer" : ""}
-                    className="text-white/60 hover:text-primary transition-all duration-300 font-bold no-underline text-xs uppercase tracking-widest group flex items-center gap-3"
+                    className="text-white/60 hover:text-primary transition-all duration-300 font-medium no-underline text-xs uppercase tracking-widest group flex items-center gap-3"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-primary transition-all duration-300 transform group-hover:scale-150" />
                     {link.name}
@@ -180,7 +182,7 @@ function Footer() {
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white font-black uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
+            <h4 className="text-white font-semibold uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
               Expertise
               <span className="absolute -bottom-2 left-0 w-6 h-1 bg-purple-500 rounded-full" />
             </h4>
@@ -188,7 +190,7 @@ function Footer() {
               {services.map((service, idx) => (
                 <li
                   key={idx}
-                  className="text-white/60 font-bold text-xs uppercase tracking-widest flex items-center gap-3 hover:text-purple-400 transition-colors cursor-default"
+                  className="text-white/60 font-medium text-xs uppercase tracking-widest flex items-center gap-3 hover:text-purple-400 transition-colors cursor-default"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-purple-500/10 group-hover:bg-purple-500 transition-all" />
                   {service}
@@ -205,7 +207,7 @@ function Footer() {
             className="col-span-2 md:col-span-2 lg:flex lg:flex-col lg:items-end"
           >
             <div className="w-full max-w-sm">
-              <h4 className="text-white font-black uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
+              <h4 className="text-white font-semibold uppercase tracking-[0.3em] text-[10px] mb-8 relative inline-block">
                 Availability
                 <span className="absolute -bottom-2 left-0 w-6 h-1 bg-emerald-400 rounded-full" />
               </h4>
@@ -216,12 +218,12 @@ function Footer() {
                       <FaEnvelope size={14} />
                     </div>
                     <div>
-                      <span className="text-white/40 font-black uppercase tracking-[0.2em] text-[8px] block">
+                      <span className="text-white/40 uppercase tracking-[0.2em] text-[8px] block">
                         Direct Contact
                       </span>
                       <a
                         href="mailto:pankaj.syal1@gmail.com"
-                        className="text-white font-black text-sm no-underline hover:text-primary transition-colors block mt-1"
+                        className="text-white text-sm no-underline hover:text-primary transition-colors block mt-1"
                       >
                         pankaj.syal1@gmail.com
                       </a>
@@ -235,10 +237,10 @@ function Footer() {
                       <FaMapMarkerAlt size={14} />
                     </div>
                     <div>
-                      <span className="text-white/40 font-black uppercase tracking-[0.2em] text-[8px] block">
+                      <span className="text-white/40 uppercase tracking-[0.2em] text-[8px] block">
                         Current Focus
                       </span>
-                      <span className="text-white font-black text-sm block mt-1">
+                      <span className="text-white text-sm block mt-1">
                         Himachal Pradesh, India
                       </span>
                     </div>
@@ -249,13 +251,13 @@ function Footer() {
           </motion.div>
         </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-            <p className="text-white/50 text-[9px] font-black uppercase tracking-[0.3em] m-0">
-              © {currentYear} <span className="text-gradient">Pankaj Kumar</span>
+            <p className="text-white/50 text-[9px] font-bold uppercase tracking-[0.3em] m-0">
+              &copy; {currentYear}<span className="text-gradient">Pankaj Kumar</span>
             </p>
             <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-white/20" />
-            <p className="text-white/50 text-[9px] font-black uppercase tracking-[0.3em] m-0">
+            <p className="text-white/50 text-[9px] font-bold uppercase tracking-[0.3em] m-0">
               Building with <span className="text-primary italic">Passion</span> &{" "}
               <span className="text-purple-400">Precision</span>
             </p>
@@ -269,16 +271,16 @@ function Footer() {
               <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:bg-white animate-pulse" />
               </div>
-              <span className="text-white/60 text-[9px] font-black uppercase tracking-widest">
+              <span className="text-white/60 text-[9px] font-semibold uppercase tracking-widest">
                 Active Status
               </span>
             </motion.div>
 
             <div className="flex gap-8">
-              <span className="text-white/50 text-[9px] font-black uppercase tracking-widest hover:text-primary transition-colors cursor-default">
+              <span className="text-white/50 text-[9px] font-semibold uppercase tracking-widest hover:text-primary transition-colors cursor-default">
                 Pixel Perfect
               </span>
-              <span className="text-white/50 text-[9px] font-black uppercase tracking-widest hover:text-primary transition-colors cursor-default">
+              <span className="text-white/50 text-[9px] font-semibold uppercase tracking-widest hover:text-primary transition-colors cursor-default">
                 Top Notch
               </span>
             </div>

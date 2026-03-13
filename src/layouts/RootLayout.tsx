@@ -8,7 +8,7 @@ const RootLayout = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <ScrollToTop />
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pt-[88px] md:pt-[96px]">
         <Outlet />
       </main>
       <Footer />

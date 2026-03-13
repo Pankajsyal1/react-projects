@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import FollowMe from '../../../components/about/FollowMe';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,42 +30,15 @@ function Header() {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Services', path: '/#services' },
-    { name: 'About', path: '/#about' },
   ];
 
   return (
     <>
-      <header className="sticky shadow top-0 left-0 z-50 w-full transition-all duration-500">
-        {/* Top Bar Navigation */}
-        <div className={`hidden lg:block transition-all duration-500  overflow-hidden ${scrolled ? 'max-h-0 py-0 -translate-y-2 opacity-0' : 'max-h-10 py-2.5 bg-white/70 backdrop-blur'}`}>
-          <div className="container h-6 flex justify-between items-center">
-            <div className="flex items-center gap-8">
-              <div className="flex items-center gap-2 group cursor-default">
-                <FaEnvelope className="text-primary group-hover:scale-110 transition-transform" size={10} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-dark/60">pankaj.syal1@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2 group cursor-default">
-                <FaPhoneAlt className="text-primary group-hover:scale-110 transition-transform" size={10} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-dark/60">+91 94786 29522</span>
-              </div>
-              <div className="flex items-center gap-2 group cursor-default">
-                <FaMapMarkerAlt className="text-primary group-hover:scale-110 transition-transform" size={10} />
-                <span className="text-[10px] font-black uppercase tracking-widest text-dark/60">India</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-6">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-dark/30">Pankaj Personal Portfolio</span>
-              <div className="h-3 w-[1px] bg-dark/10" />
-              <FollowMe />
-            </div>
-          </div>
-        </div>
-
+      <header className="fixed shadow top-0 left-0 z-50 w-full transition-all duration-500">
         {/* Main Navigation */}
-        <div className={`transition-all duration-500 ${scrolled
-            ? 'py-3 bg-white/90 backdrop-blur-xl border-b border-dark/10 shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
-            : 'py-6 bg-white/60 backdrop-blur-sm'
+        <div className={`transition-all duration-500 py-3 ${scrolled
+            ? 'bg-white/90 backdrop-blur-xl shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
+            : 'bg-white/60 backdrop-blur-sm'
           }`}>
           
           {/* Scroll Progress Bar */}
@@ -74,12 +47,12 @@ function Header() {
             style={{ scaleX }}
           />
 
-          <div className="container grid grid-cols-[1fr_auto_1fr] items-center">
+          <div className="container grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center">
             {/* Logo Section */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center"
+              className="flex items-center justify-start w-full"
             >
               <Link to="/" className="no-underline flex items-center gap-3 group relative">
                 <div className="flex min-w-30 flex-col leading-none">
@@ -140,13 +113,47 @@ function Header() {
               </button>
             </div>
 
-            <div className="hidden md:flex items-center justify-end">
+            <div className="hidden md:flex items-center justify-end gap-4 w-full">
+              <div className="flex items-center gap-2">
+                <motion.a
+                  href="mailto:pankaj.syal1@gmail.com"
+                  whileHover={{ y: -2, scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 rounded-xl bg-white/70 backdrop-blur border border-dark/10 flex items-center justify-center text-dark hover:text-primary hover:border-primary/30 transition-all shadow-sm no-underline"
+                  aria-label="Email"
+                >
+                  <FaEnvelope size={16} />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/pankaj-syal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2, scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 rounded-xl bg-white/70 backdrop-blur border border-dark/10 flex items-center justify-center text-dark hover:text-primary hover:border-primary/30 transition-all shadow-sm no-underline"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={16} />
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com/in/pankaj-syal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2, scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 rounded-xl bg-white/70 backdrop-blur border border-dark/10 flex items-center justify-center text-dark hover:text-primary hover:border-primary/30 transition-all shadow-sm no-underline"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedinIn size={16} />
+                </motion.a>
+              </div>
               <motion.a
-                href="mailto:pankaj.syal1@gmail.com"
+                href="https://api.whatsapp.com/send/?phone=919478629522"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-shimmer px-7 py-3 rounded-full bg-gradient-to-r from-primary via-primary to-purple-600 text-white font-black text-[10px] uppercase tracking-widest shadow-lg shadow-primary/20 no-underline whitespace-nowrap"
+                className="btn-shimmer px-7 py-3 rounded-full bg-gradient-to-r from-primary via-primary to-purple-600 text-white font-black text-[10px] uppercase tracking-widest shadow-lg shadow-primary/20 no-underline whitespace-nowrap inline-flex items-center gap-2"
               >
+                <FaWhatsapp size={12} />
                 Let&apos;s Collaborate
               </motion.a>
             </div>
