@@ -7,7 +7,7 @@ const HiddenSearchBarApp = () => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-3xl mx-auto px-6">
       <AppHeading sno={6} title="Intelligent Search" />
 
       <div className="mt-20 flex flex-col items-center justify-center min-h-[300px] bg-white/70 backdrop-blur-xl border border-dark/5 rounded-[4rem] shadow-2xl shadow-dark/5 p-12 overflow-hidden relative">

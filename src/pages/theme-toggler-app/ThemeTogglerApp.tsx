@@ -9,7 +9,7 @@ const ThemeTogglerApp = () => {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-4xl mx-auto px-6">
       <AppHeading sno={5} title="Chromatic Shift" />
 
       <motion.section

@@ -26,7 +26,7 @@ const MealsApp = () => {
   }, [])
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6">
       <AppHeading sno={3} title="Epicurean Seafood" />
       <div className="mt-12">
         <CardGrid items={items} loading={loading} />

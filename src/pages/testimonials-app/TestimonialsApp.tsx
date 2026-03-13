@@ -22,7 +22,7 @@ const TestimonialsApp = () => {
   }, []);
 
   return (
-    <div className='max-w-3xl mx-auto px-6 pt-32 pb-20'>
+    <div className='max-w-3xl mx-auto px-6'>
       <AppHeading sno={7} title="Voice of Excellence" />
 
       <div className='mt-12 relative h-[400px] flex items-center justify-center'>

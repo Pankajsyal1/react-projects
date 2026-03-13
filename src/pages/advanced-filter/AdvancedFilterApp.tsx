@@ -64,7 +64,7 @@ const AdvancedFilterApp = () => {
   const result = filteredData(products, selectedCategory, query);
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6">
       <AppHeading sno={1} title="Premium Sneaker Vault" />
 
       <div className="mt-12 flex relative">

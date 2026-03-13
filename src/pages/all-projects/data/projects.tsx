@@ -1,30 +1,95 @@
 export const allProjects = [
   {
-    type: "Featured Work",
+    type: "All Projects",
     projects: [
-      { path: "/advanced-filter", title: "Ecommerce Filter" },
-      { path: "/weather-app", title: "Weather App" },
-      { path: "/xolcy", title: "Xolcy SaaS Landing" },
-    ]
+  {
+    "path": "/accordion",
+    "title": "Accordion"
   },
   {
-    type: "Intermediate Projects",
-    projects: [
-      { path: "/todos", title: "Productivity Todos" },
-      { path: "/meals", title: "Epicurean Seafood" },
-      { path: "/countdown-app", title: "Temporal Engine" },
-    ]
+    "path": "/accounts",
+    "title": "Accounts"
   },
   {
-    type: "Basic Projects",
-    projects: [
-      { path: "/counter", title: "Metric Quantizer" },
-      { path: "/theme-toggler", title: "Chromatic Shift" },
-      { path: "/search-bar", title: "Intelligent Search" },
-      { path: "/testimonials", title: "Voice of Excellence" },
-      { path: "/accordion", title: "Knowledge Base" },
-      { path: "/form-validation", title: "Identity Verification" },
-      { path: "/calculator", title: "Precision Compute" },
-    ]
+    "path": "/advanced-filter",
+    "title": "Advanced Filter"
+  },
+  {
+    "path": "/atomic-blogs",
+    "title": "Atomic Blogs"
+  },
+  {
+    "path": "/calculator",
+    "title": "Calculator"
+  },
+  {
+    "path": "/countdown-app",
+    "title": "Countdown App"
+  },
+  {
+    "path": "/counter",
+    "title": "Counter"
+  },
+  {
+    "path": "/form-validation",
+    "title": "Form Validation"
+  },
+  {
+    "path": "/meals",
+    "title": "Meals"
+  },
+  {
+    "path": "/movies-popcorn",
+    "title": "Movies Popcorn"
+  },
+  {
+    "path": "/pizza",
+    "title": "Pizza"
+  },
+  {
+    "path": "/react-quiz",
+    "title": "React Quiz"
+  },
+  {
+    "path": "/search-bar",
+    "title": "Search Bar"
+  },
+  {
+    "path": "/steps-view",
+    "title": "Steps View"
+  },
+  {
+    "path": "/testimonials",
+    "title": "Testimonials"
+  },
+  {
+    "path": "/theme-toggler",
+    "title": "Theme Toggler"
+  },
+  {
+    "path": "/todos",
+    "title": "Todos"
+  },
+  {
+    "path": "/travel-view",
+    "title": "Travel View"
+  },
+  {
+    "path": "/watch-view",
+    "title": "Watch View"
+  },
+  {
+    "path": "/weather-app",
+    "title": "Weather App"
+  },
+  {
+    "path": "/workout-timer",
+    "title": "Workout Timer"
+  },
+  {
+    "path": "/xolcy",
+    "title": "Xolcy"
+  }
+]
   }
 ]

@@ -50,7 +50,7 @@ const TodosApp = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-2xl mx-auto px-6">
       <AppHeading sno={2} title="Daily Objectives" />
 
       <div className="mt-12 space-y-12">

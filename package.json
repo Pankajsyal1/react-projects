@@ -7,8 +7,8 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/generate-projects.mjs && vite",
+    "build": "node scripts/generate-projects.mjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch data/questions.json --port 9000"

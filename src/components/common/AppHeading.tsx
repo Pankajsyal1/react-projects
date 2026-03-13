@@ -6,7 +6,7 @@ const AppHeading = ({ sno = null, title, description = null }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mt-10 mb-20 relative"
+      className="mt-8 mb-12 relative"
     >
       {sno && <div className="flex items-center gap-4 mb-6">
         <motion.span
@@ -20,7 +20,7 @@ const AppHeading = ({ sno = null, title, description = null }) => {
         </span>
       </div>}
 
-      <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-dark tracking-tighter leading-[0.9] mb-4 relative">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-black text-dark tracking-tighter leading-[0.95] mb-4 relative">
         <span className="relative z-10">{title}</span>
         {/* Decorative elements behind title */}
         <motion.div

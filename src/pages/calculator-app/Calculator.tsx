@@ -28,7 +28,7 @@ const CalculatorApp = () => {
   const opBtn = `${btnClass} bg-dark/5 text-dark hover:bg-dark hover:text-white`;
 
   return (
-    <div className="max-w-md mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-md mx-auto px-6">
       <AppHeading sno={4} title="Precision Compute" />
 
       <motion.div
