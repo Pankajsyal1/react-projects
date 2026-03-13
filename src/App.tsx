@@ -18,6 +18,7 @@ import fastPizzaStore from "./pages/fast-pizza/store"
 import ReactQuiz from "./pages/react-quiz/ReactQuiz"
 import StepsView from "./pages/steps-views/StepsView"
 import TravelListView from "./pages/travel-list/TravelListView"
+import MoviesPopcorn from "./pages/movies-popcorn/MoviesPopcorn"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -90,6 +91,7 @@ const routes = createBrowserRouter([
           { path: "/form-validation", element: <FormValidation /> },
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/meals", element: <Meals /> },
+          { path: "/movies-popcorn", element: <MoviesPopcorn /> },
           { path: "/react-quiz", element: <ReactQuiz /> },
           { path: "/steps-view", element: <StepsView /> },
           { path: "/testimonials", element: <Testimonials /> },
