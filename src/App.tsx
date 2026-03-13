@@ -28,7 +28,7 @@ const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSe
 const Testimonials = lazy(() => import("./pages/testimonials-app/TestimonialsApp"))
 const Accordion = lazy(() => import("./pages/accordion-app"))
 const Projects = lazy(() => import("./pages/all-projects"))
-const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
+const ThemeToggler = lazy(() => import("./pages/theme-toggler-app/ThemeTogglerApp"))
 const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
 const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
@@ -92,8 +92,8 @@ const routes = createBrowserRouter([
           { path: "/react-quiz", element: <ReactQuiz /> },
           { path: "/steps-view", element: <StepsView /> },
           { path: "/testimonials", element: <Testimonials /> },
-          { path: "/todos", element: <Todos /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
+          { path: "/todos", element: <Todos /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
       },
