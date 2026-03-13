@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub, FaDribbble } from 'react-icons/fa';
-import Arrow from '../icons/Arrow';
+import Arrow from './icons/Arrow';
 
 const MyFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();

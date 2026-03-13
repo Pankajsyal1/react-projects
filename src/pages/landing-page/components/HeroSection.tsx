@@ -1,6 +1,6 @@
 import heroImage from '../../../assets/images/hero-one.png';
-import MyNavbar from '../Navbar/MyNavbar';
-import Arrow from '../icons/Arrow';
+import MyNavbar from './MyNavbar';
+import Arrow from './icons/Arrow';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {

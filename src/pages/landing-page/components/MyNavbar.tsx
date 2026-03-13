@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Arrow from '../icons/Arrow';
+import Arrow from './icons/Arrow';
 
 const MyNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

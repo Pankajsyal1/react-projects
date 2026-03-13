@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ServicesCard from './ServicesCard';
-import SectionHeading from '../SectionHeading/SectionHeading';
+import SectionHeading from '../SectionHeading';
 import {
   HiOutlineSupport,
   HiOutlineChartBar,

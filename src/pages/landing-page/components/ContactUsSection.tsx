@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import SectionHeading from '../SectionHeading/SectionHeading';
-import Arrow from '../icons/Arrow';
+import SectionHeading from './SectionHeading';
+import Arrow from './icons/Arrow';
 import { HiOutlineMapPin, HiOutlineEnvelope, HiOutlinePhone } from 'react-icons/hi2';
 
 interface FormData {

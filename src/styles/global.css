@@ -55,6 +55,14 @@ body {
   overflow-x: hidden;
 }
 
+html.xolcy-scroll-opt {
+  scroll-behavior: auto;
+}
+
+body.xolcy-scroll-opt {
+  background-attachment: scroll;
+}
+
 /* ========================================
    ANIMATION KEYFRAMES
    ======================================== */

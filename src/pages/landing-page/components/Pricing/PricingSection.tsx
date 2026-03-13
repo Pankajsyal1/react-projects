@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionHeading from '../SectionHeading/SectionHeading';
+import SectionHeading from '../SectionHeading';
 import BulletIcon from './BulletIcon';
 import Arrow from '../icons/Arrow';
 

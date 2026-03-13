@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Pagination, Autoplay } from 'swiper/modules';
 import ClientCard, { ClientCardProps } from './ClientCard';
-import SectionHeading from '../SectionHeading/SectionHeading';
+import SectionHeading from '../SectionHeading';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonials: ClientCardProps[] = [

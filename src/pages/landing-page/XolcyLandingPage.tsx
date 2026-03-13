@@ -1,37 +1,43 @@
-import HeroSection from '../../components/xolcy-landing-page/Hero/HeroSection'
-import OurServices from '../../components/xolcy-landing-page/Services/OurServices'
-import Features from '../../components/xolcy-landing-page/Features/Features'
-import ClientSays from '../../components/xolcy-landing-page/Testimonials/ClientSays'
-import StatsSection from '../../components/xolcy-landing-page/Stats/StatsSection'
-import PricingSection from '../../components/xolcy-landing-page/Pricing/PricingSection'
-import LogosSection from '../../components/xolcy-landing-page/Logos/LogosSection'
-import ContactUsSection from '../../components/xolcy-landing-page/ContactUs/ContactUsSection'
-import MyFooter from '../../components/xolcy-landing-page/Footer/MyFooter'
+import { useEffect } from 'react'
+import HeroSection from './components/HeroSection'
+import OurServices from './components/Services/OurServices'
+import Features from './components/Features/Features'
+import ClientSays from './components/Testimonials/ClientSays'
+import StatsSection from './components/Stats/StatsSection'
+import PricingSection from './components/Pricing/PricingSection'
+import LogosSection from './components/LogosSection'
+import ContactUsSection from './components/ContactUsSection'
+import MyFooter from './components/MyFooter'
 
 const XolcyLandingPage = () => {
+  useEffect(() => {
+    document.body.classList.add('xolcy-scroll-opt')
+    document.documentElement.classList.add('xolcy-scroll-opt')
+    return () => {
+      document.body.classList.remove('xolcy-scroll-opt')
+      document.documentElement.classList.remove('xolcy-scroll-opt')
+    }
+  }, [])
+
   return (
     <div className="relative overflow-x-hidden">
       {/* Fixed Background Decorative Elements */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         {/* Top Left Gradient Orb */}
         <div 
-          className="gradient-orb gradient-orb-primary w-[600px] h-[600px] -top-[200px] -left-[200px] animate-pulse-glow"
-          style={{ animationDelay: '0s' }}
+          className="gradient-orb gradient-orb-primary w-[480px] h-[480px] -top-[160px] -left-[160px] opacity-70 transform-gpu"
         />
         {/* Top Right Gradient Orb */}
         <div 
-          className="gradient-orb gradient-orb-blue w-[500px] h-[500px] top-[10%] -right-[150px] animate-float-slow"
-          style={{ animationDelay: '2s' }}
+          className="gradient-orb gradient-orb-blue w-[420px] h-[420px] top-[8%] -right-[130px] opacity-60 transform-gpu"
         />
         {/* Middle Left Purple Orb */}
         <div 
-          className="gradient-orb gradient-orb-purple w-[400px] h-[400px] top-[40%] -left-[100px] animate-float"
-          style={{ animationDelay: '4s' }}
+          className="gradient-orb gradient-orb-purple w-[360px] h-[360px] top-[42%] -left-[90px] opacity-60 transform-gpu"
         />
         {/* Bottom Right Pink Orb */}
         <div 
-          className="gradient-orb gradient-orb-pink w-[500px] h-[500px] bottom-[20%] -right-[200px] animate-pulse-glow"
-          style={{ animationDelay: '1s' }}
+          className="gradient-orb gradient-orb-pink w-[440px] h-[440px] bottom-[18%] -right-[180px] opacity-60 transform-gpu"
         />
         {/* Center subtle pattern */}
         <div className="absolute inset-0 pattern-dots-light opacity-30" />

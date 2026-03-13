@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionHeading from '../SectionHeading/SectionHeading';
-import FeatureImage from "../../../assets/images/index.jpg";
+import SectionHeading from '../SectionHeading';
+import FeatureImage from "../../images/index.jpg";
 import { HiOutlineLightBulb, HiOutlineCog, HiOutlineSparkles, HiOutlineGlobe } from 'react-icons/hi';
 import Arrow from '../icons/Arrow';
 
