@@ -19,10 +19,22 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      if (window.scrollY > 50 && isOpen) setIsOpen(false);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      };
+    }
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }, [isOpen]);
 
   const isActive = (path) => location.pathname === path;
@@ -36,7 +48,7 @@ function Header() {
     <>
       <header className="fixed shadow top-0 left-0 z-50 w-full transition-all duration-500">
         {/* Main Navigation */}
-        <div className={`transition-all duration-500 py-3 ${scrolled
+        <div className={`transition-all duration-500 py-2 sm:py-3 ${scrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
             : 'bg-white/60 backdrop-blur-sm'
           }`}>
@@ -47,7 +59,7 @@ function Header() {
             style={{ scaleX }}
           />
 
-          <div className="container grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center">
+          <div className="container grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 px-4 sm:px-6">
             {/* Logo Section */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -56,10 +68,10 @@ function Header() {
             >
               <Link to="/" className="no-underline flex items-center gap-3 group relative">
                 <div className="flex min-w-30 flex-col leading-none">
-                  <span className="text-sm font-black uppercase tracking-[0.3em] text-slate-900">
+                  <span className="text-xs sm:text-sm font-black uppercase tracking-[0.28em] text-slate-900">
                     Pankaj
                   </span>
-                  <span className="text-[10px] font-black uppercase tracking-[0.45em] text-slate-500">
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-slate-500">
                     Portfolio
                   </span>
                 </div>
@@ -168,15 +180,28 @@ function Header() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden bg-white fixed inset-0 z-[49] h-screen overflow-hidden pt-[140px]"
+              className="md:hidden bg-white fixed inset-0 z-[60] h-screen overflow-hidden"
             >
-              <div className="p-8 flex flex-col h-full bg-white relative">
+              <div className="p-6 sm:p-8 flex flex-col h-full bg-white relative">
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    setIsOpen(false);
+                  }}
+                  aria-label="Close menu"
+                  className="absolute right-4 top-4 sm:right-6 sm:top-6 flex h-10 w-10 items-center justify-center rounded-xl bg-dark text-white shadow-lg shadow-dark/10"
+                >
+                  <span className="relative block h-4 w-4">
+                    <span className="absolute left-0 top-1/2 h-0.5 w-4 -translate-y-1/2 rotate-45 bg-white" />
+                    <span className="absolute left-0 top-1/2 h-0.5 w-4 -translate-y-1/2 -rotate-45 bg-white" />
+                  </span>
+                </button>
                  {/* Decorative background for mobile menu */}
                  <div className="absolute top-20 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
                  <div className="absolute bottom-20 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
 
-                <div className="relative z-10 space-y-4">
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary/40 block mb-6">Explore my world</span>
+                <div className="relative z-10 space-y-4 pt-6">
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary block mb-6">Explore my world</span>
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.path}
@@ -186,8 +211,7 @@ function Header() {
                     >
                       <Link
                         to={item.path}
-                        onClick={() => setIsOpen(false)}
-                        className={`text-5xl font-black no-underline flex items-center group leading-none mb-4 ${
+                        className={`text-3xl sm:text-4xl font-black no-underline flex items-center group leading-none mb-4 ${
                           isActive(item.path) ? 'text-primary' : 'text-dark hover:text-primary transition-colors'
                         }`}
                       >
@@ -202,11 +226,11 @@ function Header() {
                   <div className="h-[1px] bg-dark/5 w-full" />
                   <div className="grid grid-cols-1 gap-6">
                      <div className="flex flex-col gap-2">
-                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary/40">Quick Contact</span>
+                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary">Quick Contact</span>
                         <a href="mailto:pankaj.syal1@gmail.com" className="text-dark font-black text-sm no-underline">pankaj.syal1@gmail.com</a>
                      </div>
                      <div className="flex flex-col gap-4">
-                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary/40">Follow</span>
+                        <span className="text-[9px] font-black uppercase tracking-[0.4em] text-primary">Follow</span>
                         <FollowMe />
                      </div>
                   </div>

@@ -85,10 +85,6 @@ export const allProjects = [
   {
     "path": "/workout-timer",
     "title": "Workout Timer"
-  },
-  {
-    "path": "/xolcy",
-    "title": "Xolcy"
   }
 ]
   }

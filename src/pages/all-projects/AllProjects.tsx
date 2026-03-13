@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="absolute -top-32 -right-24 h-72 w-72 rounded-full bg-emerald-200/40 blur-[120px]" />
       <div className="absolute bottom-0 -left-16 h-80 w-80 rounded-full bg-amber-200/40 blur-[140px]" />
 
-      <div className="relative container mx-auto px-6 pt-24 pb-12">
+      <div className="relative container mx-auto px-6">
         <div className="mb-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-end">
           <div className="space-y-4">
             <AppHeading sno={1} title="Explore modern React builds" />
@@ -18,15 +18,23 @@ const Projects = () => {
               product-style interfaces.
             </p>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-lg shadow-slate-900/5">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+          <div className="group rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-lg shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 transition-colors group-hover:text-slate-700">
               What you get
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 text-sm font-semibold text-slate-700">
-              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center">Fast UI</span>
-              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center">Clean UX</span>
-              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center">Reusable</span>
-              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center">Modern</span>
+              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center transition-transform duration-300 group-hover:-translate-y-0.5">
+                Fast UI
+              </span>
+              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center transition-transform duration-300 group-hover:-translate-y-0.5">
+                Clean UX
+              </span>
+              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center transition-transform duration-300 group-hover:-translate-y-0.5">
+                Reusable
+              </span>
+              <span className="rounded-2xl bg-slate-100 px-3 py-2 text-center transition-transform duration-300 group-hover:-translate-y-0.5">
+                Modern
+              </span>
             </div>
           </div>
         </div>

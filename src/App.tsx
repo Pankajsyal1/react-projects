@@ -16,7 +16,6 @@ const Projects = lazy(() => import("./pages/all-projects/AllProjects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app/ThemeTogglerApp"))
 const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter/AdvancedFilterApp"))
-const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
 const NotFound = lazy(() => import("./pages/404"))
 const WeatherApp = lazy(() => import("./pages/weather-app/WeatherApp"))
 const CountDown = lazy(() => import("./pages/count-down/CountDown"))
@@ -122,7 +121,6 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  { path: "/xolcy", element: <XolcyLandingPage /> },
   { path: "*", element: <NotFound /> },
 ])
 

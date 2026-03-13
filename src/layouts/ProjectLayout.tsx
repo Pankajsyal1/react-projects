@@ -12,12 +12,12 @@ const ProjectLayout = ({ children }: ProjectLayoutProps) => {
 
     return (
         <div>
-            <div className="container flex flex-col gap-3 sm:gap-4">
+            <div className="container flex flex-col gap-4 sm:gap-6">
+                <div className="sticky top-[88px] md:top-[96px] z-30 w-fit">
+                    <BackButton onClick={() => navigate(-1)} />
+                </div>
                 <div className="relative rounded-3xl border border-white/60 bg-white/70 p-6 shadow-2xl shadow-primary/5 backdrop-blur sm:p-8">
                     <div className="absolute -top-8 right-6 hidden h-20 w-20 rounded-full bg-primary/20 blur-2xl sm:block" />
-                    <div className="mb-4">
-                        <BackButton onClick={() => navigate(-1)} />
-                    </div>
                     {content}
                 </div>
             </div>
