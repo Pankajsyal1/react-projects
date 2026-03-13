@@ -1,9 +1,8 @@
 import { useState } from "react";
-import Logo from "../components/travel-list/Logo";
-import Form from "../components/travel-list/Form";
-import PackingList from "../components/travel-list/PackingList";
-import Stats from "../components/travel-list/Stats";
-import styles from "../styles/travellist.module.css"
+import Logo from "./components/Logo";
+import Form from "./components/Form";
+import PackingList from "./components/PackingList";
+import Stats from "./components/Stats";
 
 export default function TravelListView() {
   const [items, setItems] = useState([]);
@@ -33,7 +32,7 @@ export default function TravelListView() {
   }
 
   return (
-    <div className={styles["travel-container"]}>
+    <div className="min-h-screen w-full bg-amber-50 text-[#5a3e2b] grid grid-rows-[auto_auto_1fr_auto]">
       <Logo />
       <Form onAddItems={handleAddItems} />
       <PackingList
