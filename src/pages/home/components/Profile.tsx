@@ -25,28 +25,28 @@ const Profile = () => {
   ];
 
   return (
-    <div className="py-6">
+    <div className="py-6 text-center">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-left"
+        className="text-center"
       >
         <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-500">
           Available for Work
         </span>
 
         <h1 className="mt-6 text-3xl font-black leading-tight text-slate-900 sm:text-4xl lg:text-5xl">
-          Hi, I&apos;m Pankaj. I design and build pixel-precise web experiences.
+          Hi, I&apos;m Pankaj. I build modern web experiences.
         </h1>
 
-        <p className="mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">
+        <p className="mt-4 mx-auto max-w-2xl text-base text-slate-600 sm:text-lg">
           Frontend developer with a design-first mindset, focused on clean systems,
           delightful interactions, and reliable production code.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           {tags.map((tag) => (
             <span
               key={tag}
@@ -57,7 +57,7 @@ const Profile = () => {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href="#connect"
             className="rounded-full bg-slate-900 px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5"
