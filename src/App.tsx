@@ -9,7 +9,7 @@ import PizzaView from "./pages/pizza/PizzaView"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
-const Counter = lazy(() => import("./pages/counter-app"))
+const Counter = lazy(() => import("./pages/counter-app/Counter"))
 const Todos = lazy(() => import("./pages/todos-app"))
 const Meals = lazy(() => import("./pages/meals-app"))
 const Calculator = lazy(() => import("./pages/calculator-app"))
@@ -18,7 +18,7 @@ const Testimonials = lazy(() => import("./pages/testimonials-app"))
 const Accordion = lazy(() => import("./pages/accordion-app"))
 const Projects = lazy(() => import("./pages/all-projects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
-const FormValidation = lazy(() => import("./pages/form-validation-app"))
+const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
 const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
 const NotFound = lazy(() => import("./404"))
@@ -41,11 +41,11 @@ const routes = createBrowserRouter([
           { path: "/counter", element: <Counter /> },
           { path: "/todos", element: <Todos /> },
           { path: "/pizza", element: <PizzaView /> },
+          { path: "/form-validation", element: <FormValidation /> },
           { path: "/meals", element: <Meals /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/testimonials", element: <Testimonials /> },
-          { path: "/form-validation", element: <FormValidation /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
       },

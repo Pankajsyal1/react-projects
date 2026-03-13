@@ -1,4 +1,4 @@
-import CalculatorApp from "../../components/projects/beginner-projects/calculator/Calculator"
+import CalculatorApp from "./Calculator"
 
 const Calculator = () => {
   return (

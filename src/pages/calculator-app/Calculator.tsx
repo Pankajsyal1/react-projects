@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AppHeading from "../../../common/AppHeading";
+import AppHeading from "../../components/common/AppHeading";
 import { motion } from "framer-motion";
 
 const CalculatorApp = () => {

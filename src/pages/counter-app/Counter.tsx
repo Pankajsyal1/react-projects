@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AppHeading from "../../../common/AppHeading";
+import AppHeading from "../../components/common/AppHeading";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus, FiRotateCcw, FiRefreshCw } from "react-icons/fi";
 
