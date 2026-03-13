@@ -21,7 +21,6 @@ import TravelListView from "./pages/travel-list/TravelListView"
 import MoviesPopcorn from "./pages/movies-popcorn/MoviesPopcorn"
 import WatchView from "./pages/watch/WatchView"
 import WorkoutTimer from "./pages/workout-timer/WorkoutTimer"
-import WorldWiseView from "./pages/worldwise/world-wise"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home/Home"))
@@ -109,7 +108,6 @@ const routes = createBrowserRouter([
     ],
   },
   { path: "/xolcy", element: <XolcyLandingPage /> },
-  { path: "/world-wise/*", element: <WorldWiseView /> },
   { path: "*", element: <NotFound /> },
 ])
 
