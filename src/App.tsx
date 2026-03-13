@@ -16,6 +16,7 @@ import FastPizzaOrder, { loader as orderLoader } from "./pages/fast-pizza/featur
 import { action as updateOrderAction } from "./pages/fast-pizza/features/order/UpdateOrder"
 import fastPizzaStore from "./pages/fast-pizza/store"
 import ReactQuiz from "./pages/react-quiz/ReactQuiz"
+import StepsView from "./pages/steps-views/StepsView"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home"))
@@ -89,6 +90,7 @@ const routes = createBrowserRouter([
           { path: "/search-bar", element: <HiddenSearchBar /> },
           { path: "/meals", element: <Meals /> },
           { path: "/react-quiz", element: <ReactQuiz /> },
+          { path: "/steps-view", element: <StepsView /> },
           { path: "/todos", element: <Todos /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/testimonials", element: <Testimonials /> },
