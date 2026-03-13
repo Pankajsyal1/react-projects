@@ -1,42 +1,61 @@
-import { lazy } from "react"
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
-import { Provider } from "react-redux"
-import WeatherApp from "./pages/weather-app/WeatherApp"
-import CountDown from "./pages/count-down/CountDown"
+import { Suspense, lazy } from "react"
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ProjectLayout from "./layouts/ProjectLayout"
-import Accounts from "./pages/accounts/Accounts"
-import AtomicBlogs from "./pages/atomic-blogs/AtomicBlogs"
-import FastPizzaAppLayout from "./pages/fast-pizza/ui/AppLayout"
-import FastPizzaError from "./pages/fast-pizza/ui/Error"
-import FastPizzaHome from "./pages/fast-pizza/ui/Home"
-import FastPizzaMenu, { loader as menuLoader } from "./pages/fast-pizza/features/menu/Menu"
-import FastPizzaCart from "./pages/fast-pizza/features/cart/Cart"
-import FastPizzaCreateOrder, { action as createOrderAction } from "./pages/fast-pizza/features/order/CreateOrder"
-import FastPizzaOrder, { loader as orderLoader } from "./pages/fast-pizza/features/order/Order"
-import { action as updateOrderAction } from "./pages/fast-pizza/features/order/UpdateOrder"
-import fastPizzaStore from "./pages/fast-pizza/store"
-import ReactQuiz from "./pages/react-quiz/ReactQuiz"
-import StepsView from "./pages/steps-views/StepsView"
-import TravelListView from "./pages/travel-list/TravelListView"
-import MoviesPopcorn from "./pages/movies-popcorn/MoviesPopcorn"
-import WatchView from "./pages/watch/WatchView"
-import WorkoutTimer from "./pages/workout-timer/WorkoutTimer"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
 const Home = lazy(() => import("./pages/home/Home"))
 const Counter = lazy(() => import("./pages/counter-app/Counter"))
 const Todos = lazy(() => import("./pages/todos-app/Todos"))
 const Meals = lazy(() => import("./pages/meals-app/Meals"))
-const Calculator = lazy(() => import("./pages/calculator-app"))
+const Calculator = lazy(() => import("./pages/calculator-app/Calculator"))
 const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSearchBar"))
 const Testimonials = lazy(() => import("./pages/testimonials-app/TestimonialsApp"))
-const Accordion = lazy(() => import("./pages/accordion-app"))
+const Accordion = lazy(() => import("./pages/accordion-app/Accordion"))
 const Projects = lazy(() => import("./pages/all-projects/AllProjects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app/ThemeTogglerApp"))
 const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
-const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
+const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter/AdvancedFilterApp"))
 const XolcyLandingPage = lazy(() => import("./pages/landing-page/XolcyLandingPage"))
 const NotFound = lazy(() => import("./pages/404"))
+const WeatherApp = lazy(() => import("./pages/weather-app/WeatherApp"))
+const CountDown = lazy(() => import("./pages/count-down/CountDown"))
+const Accounts = lazy(() => import("./pages/accounts/Accounts"))
+const AtomicBlogs = lazy(() => import("./pages/atomic-blogs/AtomicBlogs"))
+const ReactQuiz = lazy(() => import("./pages/react-quiz/ReactQuiz"))
+const StepsView = lazy(() => import("./pages/steps-views/StepsView"))
+const TravelListView = lazy(() => import("./pages/travel-list/TravelListView"))
+const MoviesPopcorn = lazy(() => import("./pages/movies-popcorn/MoviesPopcorn"))
+const WatchView = lazy(() => import("./pages/watch/WatchView"))
+const WorkoutTimer = lazy(() => import("./pages/workout-timer/WorkoutTimer"))
+const PizzaProvider = lazy(() => import("./pages/fast-pizza/PizzaProvider"))
+const FastPizzaAppLayout = lazy(() => import("./pages/fast-pizza/ui/AppLayout"))
+const FastPizzaError = lazy(() => import("./pages/fast-pizza/ui/Error"))
+const FastPizzaHome = lazy(() => import("./pages/fast-pizza/ui/Home"))
+const FastPizzaMenu = lazy(() => import("./pages/fast-pizza/features/menu/Menu"))
+const FastPizzaCart = lazy(() => import("./pages/fast-pizza/features/cart/Cart"))
+const FastPizzaCreateOrder = lazy(() => import("./pages/fast-pizza/features/order/CreateOrder"))
+const FastPizzaOrder = lazy(() => import("./pages/fast-pizza/features/order/Order"))
+
+const menuLoader = async (args: LoaderFunctionArgs) => {
+  const module = await import("./pages/fast-pizza/features/menu/Menu")
+  return module.loader?.()
+}
+
+const orderLoader = async (args: LoaderFunctionArgs) => {
+  const module = await import("./pages/fast-pizza/features/order/Order")
+  return module.loader?.(args)
+}
+
+const createOrderAction = async (args: ActionFunctionArgs) => {
+  const module = await import("./pages/fast-pizza/features/order/CreateOrder")
+  return module.action?.(args)
+}
+
+const updateOrderAction = async (args: ActionFunctionArgs) => {
+  const module = await import("./pages/fast-pizza/features/order/UpdateOrder")
+  return module.action?.(args)
+}
 
 const routes = createBrowserRouter([
   {
@@ -56,11 +75,7 @@ const routes = createBrowserRouter([
           { path: "/counter", element: <Counter /> },
           {
             path: "/pizza",
-            element: (
-              <Provider store={fastPizzaStore}>
-                <Outlet />
-              </Provider>
-            ),
+            element: <PizzaProvider />,
             children: [
               {
                 element: <FastPizzaAppLayout />,
@@ -113,9 +128,9 @@ const routes = createBrowserRouter([
 
 const App = () => {
   return (
-    <>
+    <Suspense fallback={<div className="p-6 text-slate-600">Loading...</div>}>
       <RouterProvider router={routes} />
-    </>
+    </Suspense>
   )
 }
 

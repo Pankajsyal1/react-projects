@@ -10,7 +10,13 @@ const CalculatorApp = () => {
     setInputValue((prev) => prev + value);
   const handleCalculate = () => {
     try {
-      setInputValue(String(eval(inputValue.replace(/[^-+/*%().0-9]/g, ""))));
+      const sanitized = inputValue.replace(/[^-+/*%().0-9]/g, "");
+      if (!sanitized) {
+        setInputValue("0");
+        return;
+      }
+      const result = evaluateExpression(sanitized);
+      setInputValue(Number.isFinite(result) ? String(result) : "Error");
     } catch (err) {
       setInputValue("Error");
     }
@@ -121,3 +127,130 @@ const CalculatorApp = () => {
 };
 
 export default CalculatorApp;
+
+type Operator = "+" | "-" | "*" | "/" | "%";
+
+const precedence: Record<Operator, number> = {
+  "+": 1,
+  "-": 1,
+  "*": 2,
+  "/": 2,
+  "%": 2,
+};
+
+const isOperator = (token: string): token is Operator =>
+  token === "+" || token === "-" || token === "*" || token === "/" || token === "%";
+
+const evaluateExpression = (expression: string) => {
+  const output: (number | Operator)[] = [];
+  const operators: (Operator | "(")[] = [];
+
+  const pushNumber = (value: string) => {
+    if (value === "" || value === ".") throw new Error("Invalid number");
+    output.push(Number(value));
+  };
+
+  let index = 0;
+  while (index < expression.length) {
+    const char = expression[index];
+
+    if (char === " ") {
+      index += 1;
+      continue;
+    }
+
+    const isUnaryMinus =
+      char === "-" &&
+      (index === 0 || expression[index - 1] === "(" || isOperator(expression[index - 1]));
+
+    if (isUnaryMinus || (char >= "0" && char <= "9") || char === ".") {
+      let num = "";
+      if (isUnaryMinus) {
+        num += "-";
+        index += 1;
+      }
+      while (index < expression.length) {
+        const nextChar = expression[index];
+        if ((nextChar >= "0" && nextChar <= "9") || nextChar === ".") {
+          num += nextChar;
+          index += 1;
+        } else {
+          break;
+        }
+      }
+      pushNumber(num);
+      continue;
+    }
+
+    if (char === "(") {
+      operators.push("(");
+      index += 1;
+      continue;
+    }
+
+    if (char === ")") {
+      while (operators.length > 0 && operators[operators.length - 1] !== "(") {
+        output.push(operators.pop() as Operator);
+      }
+      if (operators.pop() !== "(") throw new Error("Mismatched parentheses");
+      index += 1;
+      continue;
+    }
+
+    if (isOperator(char)) {
+      while (
+        operators.length > 0 &&
+        operators[operators.length - 1] !== "(" &&
+        precedence[operators[operators.length - 1] as Operator] >= precedence[char]
+      ) {
+        output.push(operators.pop() as Operator);
+      }
+      operators.push(char);
+      index += 1;
+      continue;
+    }
+
+    throw new Error("Invalid token");
+  }
+
+  while (operators.length > 0) {
+    const op = operators.pop();
+    if (op === "(") throw new Error("Mismatched parentheses");
+    output.push(op as Operator);
+  }
+
+  const stack: number[] = [];
+  for (const token of output) {
+    if (typeof token === "number") {
+      stack.push(token);
+      continue;
+    }
+
+    const right = stack.pop();
+    const left = stack.pop();
+    if (left === undefined || right === undefined) throw new Error("Invalid expression");
+
+    switch (token) {
+      case "+":
+        stack.push(left + right);
+        break;
+      case "-":
+        stack.push(left - right);
+        break;
+      case "*":
+        stack.push(left * right);
+        break;
+      case "/":
+        stack.push(left / right);
+        break;
+      case "%":
+        stack.push(left % right);
+        break;
+      default:
+        throw new Error("Invalid operator");
+    }
+  }
+
+  if (stack.length !== 1) throw new Error("Invalid expression");
+  return stack[0];
+};
