@@ -25,7 +25,7 @@ const Todos = lazy(() => import("./pages/todos-app/Todos"))
 const Meals = lazy(() => import("./pages/meals-app/Meals"))
 const Calculator = lazy(() => import("./pages/calculator-app"))
 const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSearchBar"))
-const Testimonials = lazy(() => import("./pages/testimonials-app"))
+const Testimonials = lazy(() => import("./pages/testimonials-app/TestimonialsApp"))
 const Accordion = lazy(() => import("./pages/accordion-app"))
 const Projects = lazy(() => import("./pages/all-projects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app"))
@@ -91,9 +91,9 @@ const routes = createBrowserRouter([
           { path: "/meals", element: <Meals /> },
           { path: "/react-quiz", element: <ReactQuiz /> },
           { path: "/steps-view", element: <StepsView /> },
+          { path: "/testimonials", element: <Testimonials /> },
           { path: "/todos", element: <Todos /> },
           { path: "/theme-toggler", element: <ThemeToggler /> },
-          { path: "/testimonials", element: <Testimonials /> },
           { path: "/countdown-app", element: <CountDown /> },
         ]
       },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { testimonials } from '../../../../data/testimonials';
-import AppHeading from '../../../common/AppHeading';
+import { testimonials } from '../../data/testimonials';
+import AppHeading from '../../components/common/AppHeading';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiMessageSquare } from 'react-icons/fi';
 
