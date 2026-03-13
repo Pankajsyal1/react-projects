@@ -1,5 +1,5 @@
 import Section from './Section'
-import ProjectLinks from '../../../components/projects/ProjectsLinks'
+import ProjectLinks from '../../all-projects/components/ProjectsLinks'
 
 const ProjectList = () => {
   return (

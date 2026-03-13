@@ -13,7 +13,7 @@ const CounterApp = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-xl mx-auto px-6">
       <AppHeading sno={1} title="Metric Quantizer" />
 
       <div className="mt-12 space-y-8 flex flex-col items-center">

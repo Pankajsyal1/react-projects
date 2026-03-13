@@ -1,4 +1,4 @@
-import InfoCard from '../../../components/about/InfoCard';
+import InfoCard from './InfoCard';
 import { motion } from 'framer-motion';
 
 const Profile = () => {

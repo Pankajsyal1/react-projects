@@ -5,19 +5,62 @@ import {
   useReducer,
   useCallback,
 } from "react";
+import type { ReactNode } from "react";
 
 const BASE_URL = "http://localhost:9000";
 
-const CitiesContext = createContext();
+type CityPosition = {
+  lat: number;
+  lng: number;
+};
 
-const initialState = {
+export type City = {
+  id: number;
+  cityName: string;
+  country: string;
+  emoji: string;
+  date: string;
+  notes?: string;
+  position: CityPosition;
+};
+
+type NewCity = Omit<City, "id">;
+
+type State = {
+  cities: City[];
+  isLoading: boolean;
+  currentCity: City | null;
+  error: string;
+};
+
+type Action =
+  | { type: "loading" }
+  | { type: "cities/loaded"; payload: City[] }
+  | { type: "city/loaded"; payload: City }
+  | { type: "city/created"; payload: City }
+  | { type: "city/deleted"; payload: number }
+  | { type: "rejected"; payload: string };
+
+type CitiesContextValue = {
+  cities: City[];
+  isLoading: boolean;
+  currentCity: City | null;
+  error: string;
+  getCity: (id: string | number | undefined) => Promise<void>;
+  createCity: (newCity: NewCity) => Promise<void>;
+  deleteCity: (id: number) => Promise<void>;
+};
+
+const CitiesContext = createContext<CitiesContextValue | undefined>(undefined);
+
+const initialState: State = {
   cities: [],
   isLoading: false,
-  currentCity: {},
+  currentCity: null,
   error: "",
 };
 
-function reducer(state, action) {
+function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "loading":
       return { ...state, isLoading: true };
@@ -45,7 +88,7 @@ function reducer(state, action) {
         ...state,
         isLoading: false,
         cities: state.cities.filter((city) => city.id !== action.payload),
-        currentCity: {},
+        currentCity: null,
       };
 
     case "rejected":
@@ -60,19 +103,19 @@ function reducer(state, action) {
   }
 }
 
-function CitiesProvider({ children }) {
+function CitiesProvider({ children }: { children: ReactNode }) {
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
-  useEffect(function () {
+  useEffect(() => {
     async function fetchCities() {
       dispatch({ type: "loading" });
 
       try {
         const res = await fetch(`${BASE_URL}/cities`);
-        const data = await res.json();
+        const data = (await res.json()) as City[];
         dispatch({ type: "cities/loaded", payload: data });
       } catch {
         dispatch({
@@ -85,14 +128,15 @@ function CitiesProvider({ children }) {
   }, []);
 
   const getCity = useCallback(
-    async function getCity(id) {
-      if (Number(id) === currentCity.id) return;
+    async function getCity(id: string | number | undefined) {
+      if (!id) return;
+      if (Number(id) === currentCity?.id) return;
 
       dispatch({ type: "loading" });
 
       try {
         const res = await fetch(`${BASE_URL}/cities/${id}`);
-        const data = await res.json();
+        const data = (await res.json()) as City;
         dispatch({ type: "city/loaded", payload: data });
       } catch {
         dispatch({
@@ -101,10 +145,10 @@ function CitiesProvider({ children }) {
         });
       }
     },
-    [currentCity.id]
+    [currentCity?.id]
   );
 
-  async function createCity(newCity) {
+  async function createCity(newCity: NewCity) {
     dispatch({ type: "loading" });
 
     try {
@@ -115,7 +159,7 @@ function CitiesProvider({ children }) {
           "Content-Type": "application/json",
         },
       });
-      const data = await res.json();
+      const data = (await res.json()) as City;
 
       dispatch({ type: "city/created", payload: data });
     } catch {
@@ -126,7 +170,7 @@ function CitiesProvider({ children }) {
     }
   }
 
-  async function deleteCity(id) {
+  async function deleteCity(id: number) {
     dispatch({ type: "loading" });
 
     try {

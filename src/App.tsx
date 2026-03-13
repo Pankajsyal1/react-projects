@@ -1,8 +1,8 @@
 import { lazy } from "react"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import { Provider } from "react-redux"
-import WeatherApp from "./pages/weather-app"
-import CountDown from "./components/projects/intermediate-projects/CountDown"
+import WeatherApp from "./pages/weather-app/WeatherApp"
+import CountDown from "./pages/count-down/CountDown"
 import ProjectLayout from "./layouts/ProjectLayout"
 import Accounts from "./pages/accounts/Accounts"
 import AtomicBlogs from "./pages/atomic-blogs/AtomicBlogs"
@@ -19,9 +19,12 @@ import ReactQuiz from "./pages/react-quiz/ReactQuiz"
 import StepsView from "./pages/steps-views/StepsView"
 import TravelListView from "./pages/travel-list/TravelListView"
 import MoviesPopcorn from "./pages/movies-popcorn/MoviesPopcorn"
+import WatchView from "./pages/watch/WatchView"
+import WorkoutTimer from "./pages/workout-timer/WorkoutTimer"
+import WorldWiseView from "./pages/worldwise/world-wise"
 
 const RootLayout = lazy(() => import("./layouts/RootLayout"))
-const Home = lazy(() => import("./pages/home"))
+const Home = lazy(() => import("./pages/home/Home"))
 const Counter = lazy(() => import("./pages/counter-app/Counter"))
 const Todos = lazy(() => import("./pages/todos-app/Todos"))
 const Meals = lazy(() => import("./pages/meals-app/Meals"))
@@ -29,7 +32,7 @@ const Calculator = lazy(() => import("./pages/calculator-app"))
 const HiddenSearchBar = lazy(() => import("./pages/hidden-searchbar-app/HiddenSearchBar"))
 const Testimonials = lazy(() => import("./pages/testimonials-app/TestimonialsApp"))
 const Accordion = lazy(() => import("./pages/accordion-app"))
-const Projects = lazy(() => import("./pages/all-projects"))
+const Projects = lazy(() => import("./pages/all-projects/AllProjects"))
 const ThemeToggler = lazy(() => import("./pages/theme-toggler-app/ThemeTogglerApp"))
 const FormValidation = lazy(() => import("./pages/form-validation-app/FormValidationApp"))
 const AdvancedFilterApp = lazy(() => import("./pages/advanced-filter"))
@@ -50,6 +53,7 @@ const routes = createBrowserRouter([
           { path: "/advanced-filter", element: <AdvancedFilterApp /> },
           { path: "/atomic-blogs", element: <AtomicBlogs /> },
           { path: "/calculator", element: <Calculator /> },
+          { path: "/countdown-app", element: <CountDown /> },
           { path: "/counter", element: <Counter /> },
           {
             path: "/pizza",
@@ -97,13 +101,15 @@ const routes = createBrowserRouter([
           { path: "/theme-toggler", element: <ThemeToggler /> },
           { path: "/todos", element: <Todos /> },
           { path: "/travel-view", element: <TravelListView /> },
+          { path: "/watch-view", element: <WatchView /> },
           { path: "/weather-app", element: <WeatherApp /> },
-          { path: "/countdown-app", element: <CountDown /> },
+          { path: "/workout-timer", element: <WorkoutTimer /> },
         ]
       },
     ],
   },
   { path: "/xolcy", element: <XolcyLandingPage /> },
+  { path: "/world-wise/*", element: <WorldWiseView /> },
   { path: "*", element: <NotFound /> },
 ])
 

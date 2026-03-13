@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import FollowMe from '../../../components/about/FollowMe';
+import FollowMe from '../../../pages/home/components/FollowMe';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';

@@ -130,7 +130,7 @@ const FormValidationApp = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto px-6 pt-32 pb-20">
+    <div className="max-w-xl mx-auto px-6">
       <AppHeading sno={9} title="Identity Verification" />
 
       <motion.div
